@@ -1,0 +1,34 @@
+TITLE: Contact Scoring
+
+EXECUTABLES TESTED:  
+    dock6
+
+FUNCTIONS TESTED:
+    Master Score Parameters
+    PBSA Score Parameters
+    
+WALL CLOCK TIME:
+      secs
+
+FILES USED:
+    pbsaprimary.dockin    #pbsa primary scoring (single molecule)
+    verbosepbsaprimary.dockin    #pbsa primary scoring with verbose output (single)
+    orientflexiblepbsaprimary.dockin    #flexible pbsa score docking (single molecule)
+    orientflexiblecontactprimarypbsasecondarymulti.dockin    #flexible contact score docking and pbsa rescoring (library)
+    benzene.mol2    #ligand structure file
+    lig.mol2        #ligand structure file
+    multi_lig.mol2  #multiple ligand structure file
+    rec.mol2        #receptor structure file
+    chem.defn       #chem parameter input file
+    flex.defn       #flex atom definition file
+    flex_drive.tbl  #flex torsional drive file
+    vdw.defn        #vdw parameter file used to create grid
+
+    ../grid_generation/    
+        grid.bmp    #bump grid
+        grid.nrg    #energy grid for vdw values
+
+FILES GENERATED:
+    XXX_scored.mol2        #best scoring pose from input file    
+
+NOTE:  grid_generation must be run first

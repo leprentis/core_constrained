@@ -1,0 +1,32 @@
+#!/bin/sh
+#set -vx
+
+# check if PBSA ZAP in available
+if [ -z "$ZAP_HOME" ]
+then
+    echo "Environment variable ZAP_HOME is not defined."
+    echo "    Assuming ZAP is not available."
+    echo "PB/SA rescoring will not be performed."
+    USE_DOCK_VERSION="dock6"
+else
+    USE_DOCK_VERSION="dock6.pbsa"
+fi
+
+# Rescore ligand using GBSA Zou scoring function 
+echo "Performing rescoring using Zou GBSA."
+../../../bin/$USE_DOCK_VERSION -i gbsa_zou.in  -o gbsa_zou.out
+
+# Rescore ligand using GBSA Hawkins scoring function 
+echo "Performing rescoring using Hawkins GBSA."
+../../../bin/$USE_DOCK_VERSION -i gbsa_hawkins.in -o gbsa_hawkins.out
+
+# Rescore ligand using PBSA ZAP  scoring function
+if [ -z "$ZAP_HOME" ]
+then
+    exit 1
+else
+    echo "Performing rescoring using PBSA"
+    ../../../bin/$USE_DOCK_VERSION -i pbsa.in -o pbsa.out
+fi
+
+exit

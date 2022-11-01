@@ -1,0 +1,162 @@
+##########                    Descriptor_Score:          -32.392441
+##########                     MultiGrid_Score:          -32.392441
+##########                 desc_MGS_vdw_energy:          -26.486906
+##########                  desc_MGS_es_energy:          -30.504768
+##########              desc_MGS_vdw+es_energy:          -56.991676
+##########                    desc_MGS_vdw_fps:           14.338777
+##########                     desc_MGS_es_fps:           10.260458
+##########                 desc_MGS_vdw+es_fps:           24.599236
+##########           Internal_energy_repulsive:            0.760241
+##########                    Molecular_Weight:              169.03
+##########                DOCK_Rotatable_Bonds:                   5
+##########                       Formal_Charge:           -2.000000
+##########                     Layer_Completed:                   5
+##########                         Frag_String:              ANCHORsid.5--lnk.3--lnk.0--lnk.1--lnk.2--sid.4
+
+@<TRIPOS>MOLECULE
+1IK4.lig
+ 14 13 1 0 0
+SMALL
+bcc
+sid.5--lnk.3--lnk.0--lnk.1--lnk.2--sid.4
+
+@<TRIPOS>ATOM
+      1 O4         82.7957  -13.3506   66.7501 O.co2   1  LIG        -0.6332
+      2 O5         85.3746  -14.1156   67.4343 O.co2   1  LIG        -0.6332
+      3 O6         84.6556  -11.7870   65.9723 O.co2   1  LIG        -0.6332
+      4 P1         84.4157  -13.3553   66.3145 P.3     1  LIG         0.0599
+      5 O3         84.2363  -14.1693   64.7985 O.3     2  LIG        -0.3460
+      6 C2         83.8708  -15.5099   64.8366 C.3     3  LIG         0.1320
+      7 H1         84.6694  -16.1039   64.4750 H       3  LIG         0.0675
+      8 H2         83.6481  -15.7870   65.8339 H       3  LIG         0.0675
+      9 C1         82.6620  -15.6246   63.9559 C.2     4  LIG         0.2692
+     10 O2         82.2350  -14.5582   63.4865 O.2     4  LIG        -0.2700
+     11 N1         82.1680  -16.9898   63.8023 N.am    5  LIG        -0.2358
+     12 H3         82.6430  -17.7527   64.2610 H       5  LIG         0.1983
+     13 O1         81.0721  -17.1717   63.0351 O.3     6  LIG        -0.2885
+     14 H4         80.5945  -16.3351   62.9519 H       6  LIG         0.2456
+@<TRIPOS>BOND
+     1     4     1    1
+     2     4     2    1
+     3     4     3    1
+     4     4     5    1
+     5     7     6    1
+     6     8     6    1
+     7     5     6    1
+     8    10     9    2
+     9     6     9    1
+    10    12    11    1
+    11     9    11   am
+    12    14    13    1
+    13    11    13    1
+@<TRIPOS>SUBSTRUCTURE
+     1 LIG         1 TEMP              0 ****  ****    0 ROOT
+
+##########                    Descriptor_Score:           -4.059124
+##########                     MultiGrid_Score:           -4.059124
+##########                 desc_MGS_vdw_energy:          -21.575941
+##########                  desc_MGS_es_energy:          -12.576023
+##########              desc_MGS_vdw+es_energy:          -34.151962
+##########                    desc_MGS_vdw_fps:           13.863132
+##########                     desc_MGS_es_fps:           16.229706
+##########                 desc_MGS_vdw+es_fps:           30.092838
+##########           Internal_energy_repulsive:            0.994570
+##########                    Molecular_Weight:          169.030396
+##########                DOCK_Rotatable_Bonds:                   5
+##########                       Formal_Charge:           -2.000000
+##########                     Layer_Completed:                   5
+##########                         Frag_String:              ANCHORsid.5--lnk.3--lnk.0--lnk.1--lnk.2--sid.4
+
+@<TRIPOS>MOLECULE
+1IK4.lig
+ 14 13 1 0 0
+SMALL
+bcc
+sid.5--lnk.3--lnk.0--lnk.1--lnk.2--sid.4
+
+@<TRIPOS>ATOM
+      1 O4         82.3186  -15.5207   62.7323 O.co2   1  LIG        -0.6332
+      2 O5         83.4940  -17.9112   63.5120 O.co2   1  LIG        -0.6332
+      3 O6         81.1665  -16.7447   64.6515 O.co2   1  LIG        -0.6332
+      4 P1         82.6421  -16.5734   63.9977 P.3     1  LIG         0.0599
+      5 O3         83.5003  -15.4568   65.0025 O.3     2  LIG        -0.3460
+      6 C2         83.2101  -14.1067   64.8439 C.3     3  LIG         0.1320
+      7 H1         82.1654  -13.9333   64.8507 H       3  LIG         0.0675
+      8 H2         83.6253  -13.7264   63.9473 H       3  LIG         0.0675
+      9 C1         83.8388  -13.4173   66.0184 C.2     4  LIG         0.2692
+     10 O2         83.9625  -14.1055   67.0434 O.2     4  LIG        -0.2700
+     11 N1         84.1961  -12.0243   65.7664 N.am    5  LIG        -0.2358
+     12 H3         84.0236  -11.6153   64.8603 H       5  LIG         0.1983
+     13 O1         84.7538  -11.3320   66.7824 O.3     6  LIG        -0.2885
+     14 H4         85.3668  -10.6745   66.4261 H       6  LIG         0.2456
+@<TRIPOS>BOND
+     1     4     1    1
+     2     4     2    1
+     3     4     3    1
+     4     4     5    1
+     5     7     6    1
+     6     8     6    1
+     7     5     6    1
+     8    10     9    2
+     9     6     9    1
+    10    12    11    1
+    11     9    11   am
+    12    14    13    1
+    13    11    13    1
+@<TRIPOS>SUBSTRUCTURE
+     1 LIG         1 TEMP              0 ****  ****    0 ROOT
+
+##########                    Descriptor_Score:            6.207886
+##########                     MultiGrid_Score:            6.207886
+##########                 desc_MGS_vdw_energy:           14.842150
+##########                  desc_MGS_es_energy:          -35.905037
+##########              desc_MGS_vdw+es_energy:          -21.062887
+##########                    desc_MGS_vdw_fps:           17.457590
+##########                     desc_MGS_es_fps:            9.813183
+##########                 desc_MGS_vdw+es_fps:           27.270773
+##########           Internal_energy_repulsive:            0.349331
+##########                    Molecular_Weight:          169.030396
+##########                DOCK_Rotatable_Bonds:                   5
+##########                       Formal_Charge:           -2.000000
+##########                     Layer_Completed:                   5
+##########                         Frag_String:              ANCHORsid.5--lnk.3--lnk.0--lnk.1--lnk.2--sid.4
+
+@<TRIPOS>MOLECULE
+1IK4.lig
+ 14 13 1 0 0
+SMALL
+bcc
+sid.5--lnk.3--lnk.0--lnk.1--lnk.2--sid.4
+
+@<TRIPOS>ATOM
+      1 O4         84.8927  -11.3107   65.3607 O.co2   1  LIG        -0.6332
+      2 O5         82.6578  -12.7941   66.0741 O.co2   1  LIG        -0.6332
+      3 O6         84.5169  -11.6077   67.8666 O.co2   1  LIG        -0.6332
+      4 P1         84.2131  -12.3723   66.4676 P.3     1  LIG         0.0599
+      5 O3         85.3939  -13.6286   66.3252 O.3     2  LIG        -0.3460
+      6 C2         85.3702  -14.6344   67.2844 C.3     3  LIG         0.1320
+      7 H1         84.3854  -14.9868   67.4497 H       3  LIG         0.0675
+      8 H2         85.7849  -14.3026   68.2004 H       3  LIG         0.0675
+      9 C1         86.2115  -15.7443   66.7273 C.2     4  LIG         0.2692
+     10 O2         86.2881  -16.7654   67.4282 O.2     4  LIG        -0.2700
+     11 N1         86.8241  -15.4343   65.4388 N.am    5  LIG        -0.2358
+     12 H3         86.6536  -14.5413   65.0011 H       5  LIG         0.1983
+     13 O1         87.6092  -16.3799   64.8802 O.3     6  LIG        -0.2885
+     14 H4         87.1478  -16.7803   64.1307 H       6  LIG         0.2456
+@<TRIPOS>BOND
+     1     4     1    1
+     2     4     2    1
+     3     4     3    1
+     4     4     5    1
+     5     7     6    1
+     6     8     6    1
+     7     5     6    1
+     8    10     9    2
+     9     6     9    1
+    10    12    11    1
+    11     9    11   am
+    12    14    13    1
+    13    11    13    1
+@<TRIPOS>SUBSTRUCTURE
+     1 LIG         1 TEMP              0 ****  ****    0 ROOT
+

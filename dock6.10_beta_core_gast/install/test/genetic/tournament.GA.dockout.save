@@ -1,0 +1,304 @@
+
+
+
+--------------------------------------
+DOCK v6.9
+
+Released August 2018
+Copyright UCSF
+--------------------------------------
+
+
+Conformational Sampling Parameters
+------------------------------------------------------------------------------------------
+conformer_search_type                                        genetic
+
+Genetic Algorithm Recombination Parameters
+------------------------------------------------------------------------------------------
+ga_molecule_file                                             ga_parents.mol2
+ga_fraglib_scaffold_file                                     ../../../parameters/fraglib_scaffold.mol2
+ga_fraglib_linker_file                                       ../../../parameters/fraglib_linker.mol2
+ga_fraglib_sidechain_file                                    ../../../parameters/fraglib_sidechain.mol2
+ga_torenv_table                                              sfinal_torenv_complete.dat
+ga_max_generations                                           1
+ga_xover_sampling_method_rand                                yes
+ga_xover_max                                                 150
+ga_bond_tolerance                                            0.5
+ga_angle_cutoff                                              0.14
+ga_check_overlap                                             yes
+ga_check_only                                                no
+ga_mutate_parents                                            yes
+ga_pmut_rate                                                 0.3
+ga_omut_rate                                                 0.7
+ga_max_mut_cycles                                            5
+ga_mut_sampling_method                                       rand
+ga_num_random_picks                                          10
+ga_max_root_size                                             5
+ga_energy_cutoff                                             100
+ga_heur_unmatched_num                                        1
+ga_heur_matched_rmsd                                         2.0
+ga_constraint_mol_wt                                         500
+ga_constraint_rot_bon                                        10
+ga_constraint_H_accept                                       10
+ga_constraint_H_don                                          5
+ga_constraint_formal_charge                                  4
+ga_ensemble_size                                             28
+ga_selection_method                                          tournament
+ga_tournament_p_vs_c                                         yes
+ga_niching                                                   no
+ga_selection_extinction                                      no
+ga_max_num_gen_with_no_crossover                             5
+ga_output_prefix                                             tournament.GA
+
+Internal Energy Parameters
+------------------------------------------------------------------------------------------
+use_internal_energy                                          yes
+internal_energy_rep_exp                                      12
+internal_energy_cutoff                                       100.0
+Note: Internal energy only includes repulsive VDW for growth and/or minimization.
+
+Database Filter Parameters
+------------------------------------------------------------------------------------------
+use_database_filter                                          no
+
+Orient Ligand Parameters
+------------------------------------------------------------------------------------------
+orient_ligand                                                no
+
+Bump Filter Parameters
+------------------------------------------------------------------------------------------
+bump_filter                                                  no
+
+Master Score Parameters
+------------------------------------------------------------------------------------------
+score_molecules                                              yes
+
+Contact Score Parameters
+------------------------------------------------------------------------------------------
+contact_score_primary                                        no
+contact_score_secondary                                      no
+
+Grid Score Parameters
+------------------------------------------------------------------------------------------
+grid_score_primary                                           no
+grid_score_secondary                                         no
+
+MultiGrid Score Parameters
+------------------------------------------------------------------------------------------
+multigrid_score_primary                                      no
+multigrid_score_secondary                                    no
+
+Dock3.5 Score Parameters
+------------------------------------------------------------------------------------------
+dock3.5_score_primary                                        no
+dock3.5_score_secondary                                      no
+
+Continuous Energy Score Parameters
+------------------------------------------------------------------------------------------
+continuous_score_primary                                     no
+continuous_score_secondary                                   no
+
+Footprint Similarity Score Parameters
+------------------------------------------------------------------------------------------
+footprint_similarity_score_primary                           no
+footprint_similarity_score_secondary                         no
+
+Pharmacophore Similarity Score Parameters
+------------------------------------------------------------------------------------------
+pharmacophore_score_primary                                  no
+pharmacophore_score_secondary                                no
+
+Descriptor Score Parameters
+------------------------------------------------------------------------------------------
+descriptor_score_primary                                     yes
+descriptor_score_secondary                                   no
+descriptor_use_grid_score                                    yes
+descriptor_use_pharmacophore_score                           no
+descriptor_use_tanimoto                                      no
+descriptor_use_hungarian                                     no
+descriptor_use_volume_overlap                                yes
+
+--- Descriptor Score Parameters: Grid Score ---
+descriptor_grid_score_rep_rad_scale                          1
+descriptor_grid_score_vdw_scale                              1
+descriptor_grid_score_es_scale                               1
+descriptor_grid_score_grid_prefix                            ga_rec.grid
+
+--- Descriptor Score Parameters: Volume Overlap Score ---
+descriptor_volume_score_reference_mol2_filename              ga_lig.mol2
+descriptor_volume_score_overlap_compute_method               analytical
+
+--- Descriptor Score Weights ---
+descriptor_weight_grid_score                                 1
+descriptor_weight_volume_overlap_score                       -15
+
+Using these settings, the Descriptor Score function takes the form:
+Descriptor_Score = (1 * Grid_Score) + (-15 * Volume_Score)
+
+Zou GB/SA Score Parameters
+------------------------------------------------------------------------------------------
+gbsa_zou_score_secondary                                     no
+
+Hawkins GB/SA Score Parameters
+------------------------------------------------------------------------------------------
+gbsa_hawkins_score_secondary                                 no
+
+SASA Score Parameters
+------------------------------------------------------------------------------------------
+SASA_score_secondary                                         no
+
+Amber Score Parameters
+------------------------------------------------------------------------------------------
+amber_score_secondary                                        no
+
+Note: No secondary scoring function selected.
+
+
+Simplex Minimization Parameters
+------------------------------------------------------------------------------------------
+minimize_ligand                                              yes
+minimize_anchor                                              yes
+minimize_flexible_growth                                     yes
+use_advanced_simplex_parameters                              no
+simplex_max_cycles                                           1
+simplex_score_converge                                       0.1
+simplex_cycle_converge                                       1.0
+simplex_trans_step                                           1.0
+simplex_rot_step                                             0.1
+simplex_tors_step                                            10.0
+simplex_anchor_max_iterations                                500
+simplex_grow_max_iterations                                  500
+simplex_grow_tors_premin_iterations                          0
+simplex_random_seed                                          0
+simplex_restraint_min                                        yes
+simplex_coefficient_restraint                                10.0
+
+Atom Typing Parameters
+------------------------------------------------------------------------------------------
+atom_model                                                   all
+vdw_defn_file                                                ../../../parameters/vdw_de_novo.defn
+flex_defn_file                                               ../../../parameters/flex.defn
+flex_drive_file                                              ../../../parameters/flex_drive.tbl
+chem_defn_file                                               ../../../parameters/chem.defn
+------------------------------------------------------------------------------------------
+
+Initializing Genetic Algorithms Routines...
+ Reading the molecule library from ga_parents.mol2...Done (#=30)
+ Reading the scaffold library from ../../../parameters/fraglib_scaffold.mol2...Done (#=18)
+ Reading the linker library from ../../../parameters/fraglib_linker.mol2...Done (#=145)
+ Reading the sidechain library from ../../../parameters/fraglib_sidechain.mol2...Done (#=217)
+Initializing typer for Grid Score within Descriptor Score...
+Initializing Grid Score Routines...
+ Reading the energy grid from ga_rec.grid.nrg
+ Done reading the energy grid.
+ Reading the grid box quantifiers from ga_rec.grid.bmp
+ Done reading the grid box quantifiers.
+Initializing typer for Volume Overlap Score within Descriptor Score...
+Volume reference mol2 file was read in successfully
+
+## Initializing Initial Parent Generation ##
+#### Parent 0  Rescored to Fitness: -69.265
+#### Parent 1  Rescored to Fitness: -48.0863
+#### Parent 2  Rescored to Fitness: -69.5668
+#### Parent 3  Rescored to Fitness: -65.1712
+#### Parent 4  Rescored to Fitness: -64.169
+#### Parent 5  Rescored to Fitness: -65.459
+#### Parent 6  Rescored to Fitness: -53.1791
+#### Parent 7  Rescored to Fitness: -47.1376
+#### Parent 8  Rescored to Fitness: -76.3573
+#### Parent 9  Rescored to Fitness: -48.7475
+#### Parent 10  Rescored to Fitness: -53.4197
+#### Parent 11  Rescored to Fitness: -44.7104
+#### Parent 12  Rescored to Fitness: -49.4084
+#### Parent 13  Rescored to Fitness: -44.2945
+#### Parent 14  Rescored to Fitness: -45.9651
+#### Parent 15  Rescored to Fitness: -63.6619
+#### Parent 16  Rescored to Fitness: -72.1469
+#### Parent 17  Rescored to Fitness: -51.7464
+#### Parent 18  Rescored to Fitness: -44.9117
+#### Parent 19  Rescored to Fitness: -49.948
+#### Parent 20  Rescored to Fitness: -56.1479
+#### Parent 21  Rescored to Fitness: -47.2115
+#### Parent 22  Rescored to Fitness: -33.9641
+#### Parent 23  Rescored to Fitness: -47.9165
+#### Parent 24  Rescored to Fitness: -53.0716
+#### Parent 25  Rescored to Fitness: -51.2097
+#### Parent 26  Rescored to Fitness: -75.0742
+#### Parent 27  Rescored to Fitness: -52.3826
+#### Parent 28  Rescored to Fitness: -45.9879
+#### Parent 29  Rescored to Fitness: -44.2863
+Average Score parents gen 1: -53.7953
+For GA round 1 : new size of parents = 24
+
+## Entering Genetic Algorithm Generation 1 ##
+For GA round 1 : new size of parents = 24
+
+#### Unique molecules that overlap 23
+Number of overlapping bonds this round 163 of 4030 bonds sampled
+
+#### In breeding, size of children 21
+#### Total number of molecules made: 26
+#### Total number with valid torenv: 21
+#### Total number with valid descriptors: 21
+#### Number of unique pairs sampled 276 of 276
+#### Total number of xovers prevented by Hungarian: 298
+#### Total number of molecules after minimization: 21
+#### Initial Ensemble Size 21
+#### Size after energy/internal energy prune 21 0 0
+#### Ensemble size after similarity pruning 13
+
+-----------------------------------
+#### Total number of molecules after fitness pruning: 13
+#### Total number of parents involved in xover: 12
+#### Entering Random Parent mutations. Size 12
+#### For this round of GA, parent mutations: 3
+#### Expected number of parent mutations: 3 size 3 mut cycle 0
+Successful parent deletions: 1 / 1
+Successful parent additions: 1 / 2
+Successful parent substitutions: 1 / 1
+Successful parent replacements: 0 / 0
+
+-----------------------------------
+#### Initial Ensemble Size 3
+#### Size after energy/internal energy prune 3 0 0
+#### Ensemble size after similarity pruning 3
+
+-----------------------------------
+### Offspring_size_before_parents_pruning 3 offspring_size_after_pruning 3
+### Parents size before P-O pruning 24 Parents size after pruning 24
+
+-----------------------------------
+#### Entering Random Offspring mutations. Size 13
+#### For this round of GA, offspring mutations: 9
+#### Expected number of offspring mutations: 9 size 9 mut cycle 0
+Successful offspring deletions: 3 / 3
+Successful offspring additions: 1 / 1
+Successful offspring substitutions: 5 / 5
+Successful offspring replacements: 0 / 2
+#### Initial Ensemble Size 9
+#### Size after energy/internal energy prune 9 0 0
+#### Ensemble size after similarity pruning 9
+
+-----------------------------------
+#### Initial Ensemble Size 22
+#### Size after energy/internal energy prune 22 0 0
+#### Ensemble size after similarity pruning 22
+
+-----------------------------------
+### Offspring_size_before_parents_pruning 22 offspring_size_after_pruning 22
+### Parents size before P-O pruning 3 Parents size after pruning 3
+
+-----------------------------------
+### Offspring_size_before_parents_pruning 22 offspring_size_after_pruning 22
+### Parents size before P-O pruning 24 Parents size after pruning 24
+
+-----------------------------------
+Average Score gen 1 -38.5989
+#### Final parent size before selection: 24
+#### Final offspring size before selection: 25
+Selection Method: Tournament
+
+ #### 14 molecules in new ensemble 1 of GA
+Average survivors score from gen 1 -54.4259
+Random Seed:0
+Total elapsed time:	18 seconds

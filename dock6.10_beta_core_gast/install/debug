@@ -1,0 +1,972 @@
+Starting installation of 
+DOCK v6.9
+program dock at Mon Oct 12 20:19:36 EDT 2020.
+
+make -C ../src/dock  install
+make[1]: Entering directory `/gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/dock6_beta_rdkit/src/dock'
+g++ -c  -DBUILD_DOCK_WITH_RDKIT -I/gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code -I/gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include -O2  -o dockmol.o  dockmol.cpp
+dockmol.cpp: In member function ‘void DOCKMol::allocate_arrays(int, int, int)’:
+dockmol.cpp:971:5: error: ‘number_spiro_centers’ was not declared in this scope
+     number_spiro_centers = 0;
+     ^~~~~~~~~~~~~~~~~~~~
+dockmol.cpp:971:5: note: suggested alternative: ‘number_stereocenters’
+     number_spiro_centers = 0;
+     ^~~~~~~~~~~~~~~~~~~~
+     number_stereocenters
+dockmol.cpp: In member function ‘void DOCKMol::clear_molecule()’:
+dockmol.cpp:1119:5: error: ‘number_spiro_centers’ was not declared in this scope
+     number_spiro_centers = 0;
+     ^~~~~~~~~~~~~~~~~~~~
+dockmol.cpp:1119:5: note: suggested alternative: ‘number_stereocenters’
+     number_spiro_centers = 0;
+     ^~~~~~~~~~~~~~~~~~~~
+     number_stereocenters
+dockmol.cpp: In function ‘void fixNitroSubstructureAndCharge(RDKit::RWMol&, unsigned int)’:
+dockmol.cpp:1716:55: error: conversion from ‘std::vector<unsigned int>::iterator {aka __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int> >}’ to non-scalar type ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ requested
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                         ~~~~~~~~~~~~~~^~
+dockmol.cpp:1716:62: error: no match for ‘operator<’ (operand types are ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ and ‘std::vector<unsigned int>::iterator {aka __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int> >}’)
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                           ~~~^~~~~~~~~~~~~~~~
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:64:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_pair.h:449:5: note: candidate: template<class _T1, class _T2> constexpr bool std::operator<(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator<(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_pair.h:449:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::pair<_T1, _T2>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:305:5: note: candidate: template<class _Iterator> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator<(const reverse_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:305:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:343:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator<(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:343:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:1142:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator<(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:1142:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::move_iterator<_IteratorL>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:1148:5: note: candidate: template<class _Iterator> bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorL>&)
+     operator<(const move_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:1148:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::move_iterator<_IteratorL>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/string:52:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/locale_classes.h:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/ios_base.h:41,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:42,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/basic_string.h:5892:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/basic_string.h:5892:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/string:52:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/locale_classes.h:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/ios_base.h:41,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:42,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/basic_string.h:5905:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/basic_string.h:5905:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/string:52:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/locale_classes.h:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/ios_base.h:41,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:42,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/basic_string.h:5917:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<(const _CharT* __lhs,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/basic_string.h:5917:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   mismatched types ‘const _CharT*’ and ‘__gnu_cxx::__normal_iterator<int*, std::vector<int> >’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/ios_base.h:46:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:42,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/system_error:208:3: note: candidate: bool std::operator<(const std::error_code&, const std::error_code&)
+   operator<(const error_code& __lhs, const error_code& __rhs) noexcept
+   ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/system_error:208:3: note:   no known conversion for argument 1 from ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ to ‘const std::error_code&’
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/system_error:282:3: note: candidate: bool std::operator<(const std::error_condition&, const std::error_condition&)
+   operator<(const error_condition& __lhs,
+   ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/system_error:282:3: note:   no known conversion for argument 1 from ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ to ‘const std::error_condition&’
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/vector:64:0,
+                 from dockmol.h:7,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_vector.h:1613:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator<(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_vector.h:1613:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/map:60:0,
+                 from utils.h:5,
+                 from dockmol.h:8,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_tree.h:1543:5: note: candidate: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> bool std::operator<(const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     operator<(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_tree.h:1543:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/tuple:39:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_map.h:63,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/map:61,
+                 from utils.h:5,
+                 from dockmol.h:8,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/array:262:5: note: candidate: template<class _Tp, long unsigned int _Nm> bool std::operator<(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)
+     operator<(const array<_Tp, _Nm>& __a, const array<_Tp, _Nm>& __b)
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/array:262:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::array<_Tp, _Nm>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_map.h:63:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/map:61,
+                 from utils.h:5,
+                 from dockmol.h:8,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/tuple:1410:5: note: candidate: template<class ... _TElements, class ... _UElements> constexpr bool std::operator<(const std::tuple<_Tps ...>&, const std::tuple<_Args2 ...>&)
+     operator<(const tuple<_TElements...>& __t,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/tuple:1410:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::tuple<_Tps ...>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/map:61:0,
+                 from utils.h:5,
+                 from dockmol.h:8,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_map.h:1397:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator<(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)
+     operator<(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_map.h:1397:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/map:62:0,
+                 from utils.h:5,
+                 from dockmol.h:8,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_multimap.h:1062:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator<(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     operator<(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_multimap.h:1062:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/list:63:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_list.h:1918:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::__cxx11::list<_Tp, _Alloc>&, const std::__cxx11::list<_Tp, _Alloc>&)
+     operator<(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_list.h:1918:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::__cxx11::list<_Tp, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/set:61:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:19,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_set.h:930:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator<(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)
+     operator<(const set<_Key, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_set.h:930:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::set<_Key, _Compare, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/set:62:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:19,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_multiset.h:913:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator<(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)
+     operator<(const multiset<_Key, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_multiset.h:913:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::multiset<_Key, _Compare, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/deque:64:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/detail/container_fwd.hpp:91,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:22,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_deque.h:293:5: note: candidate: template<class _Tp, class _Ref, class _Ptr> bool std::operator<(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+     operator<(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_deque.h:293:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/deque:64:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/detail/container_fwd.hpp:91,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:22,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_deque.h:301:5: note: candidate: template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> bool std::operator<(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)
+     operator<(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_deque.h:301:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/deque:64:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/detail/container_fwd.hpp:91,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:22,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_deque.h:2276:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::deque<_Tp, _Alloc>&, const std::deque<_Tp, _Alloc>&)
+     operator<(const deque<_Tp, _Alloc>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_deque.h:2276:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::deque<_Tp, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:80:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/unique_ptr.h:717:5: note: candidate: template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator<(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)
+     operator<(const unique_ptr<_Tp, _Dp>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/unique_ptr.h:717:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:80:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/unique_ptr.h:728:5: note: candidate: template<class _Tp, class _Dp> bool std::operator<(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)
+     operator<(const unique_ptr<_Tp, _Dp>& __x, nullptr_t)
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/unique_ptr.h:728:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:80:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/unique_ptr.h:734:5: note: candidate: template<class _Tp, class _Dp> bool std::operator<(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)
+     operator<(nullptr_t, const unique_ptr<_Tp, _Dp>& __x)
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/unique_ptr.h:734:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<unsigned int>::iterator {aka __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int> >}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:52:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:81,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr_base.h:1441:5: note: candidate: template<class _Tp, class _Up, __gnu_cxx::_Lock_policy _Lp> bool std::operator<(const std::__shared_ptr<_Tp1, _Lp>&, const std::__shared_ptr<_Tp2, _Lp>&)
+     operator<(const __shared_ptr<_Tp, _Lp>& __a,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr_base.h:1441:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::__shared_ptr<_Tp1, _Lp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:52:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:81,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr_base.h:1452:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator<(const std::__shared_ptr<_Tp, _Lp>&, std::nullptr_t)
+     operator<(const __shared_ptr<_Tp, _Lp>& __a, nullptr_t) noexcept
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr_base.h:1452:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:52:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:81,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr_base.h:1460:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator<(std::nullptr_t, const std::__shared_ptr<_Tp, _Lp>&)
+     operator<(nullptr_t, const __shared_ptr<_Tp, _Lp>& __a) noexcept
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr_base.h:1460:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<unsigned int>::iterator {aka __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int> >}’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:81:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:398:5: note: candidate: template<class _Tp, class _Up> bool std::operator<(const std::shared_ptr<_Tp>&, const std::shared_ptr<_Up>&)
+     operator<(const shared_ptr<_Tp>& __a, const shared_ptr<_Up>& __b) noexcept
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:398:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::shared_ptr<_Tp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:81:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:408:5: note: candidate: template<class _Tp> bool std::operator<(const std::shared_ptr<_Tp>&, std::nullptr_t)
+     operator<(const shared_ptr<_Tp>& __a, nullptr_t) noexcept
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:408:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::shared_ptr<_Tp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:81:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:416:5: note: candidate: template<class _Tp> bool std::operator<(std::nullptr_t, const std::shared_ptr<_Tp>&)
+     operator<(nullptr_t, const shared_ptr<_Tp>& __a) noexcept
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:416:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   ‘std::vector<unsigned int>::iterator {aka __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int> >}’ is not derived from ‘const std::shared_ptr<_Tp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:895:5: note: candidate: template<class _Iterator, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)
+     operator<(const __normal_iterator<_Iterator, _Container>& __lhs,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:895:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   deduced conflicting types for parameter ‘_Iterator’ (‘int*’ and ‘unsigned int*’)
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:888:5: note: candidate: template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)
+     operator<(const __normal_iterator<_IteratorL, _Container>& __lhs,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:888:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1716:77: note:   deduced conflicting types for parameter ‘_Container’ (‘std::vector<int>’ and ‘std::vector<unsigned int>’)
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+dockmol.cpp: In function ‘bool cleanUpMol2Substructures(RDKit::RWMol&)’:
+dockmol.cpp:1892:69: error: no matching function for call to ‘RDKit::RWMol::getAtomNeighbors(RDKit::Bond*)’
+         res.getAtomNeighbors(res.getBondBetweenAtoms(idx, *nbrIdxIt));
+                                                                     ^
+In file included from dockmol.h:16:0,
+                 from dockmol.cpp:4:
+/gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:472:17: note: candidate: RDKit::ROMol::ADJ_ITER_PAIR RDKit::ROMol::getAtomNeighbors(const RDKit::Atom*) const
+   ADJ_ITER_PAIR getAtomNeighbors(Atom const *at) const;
+                 ^~~~~~~~~~~~~~~~
+/gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:472:17: note:   no known conversion for argument 1 from ‘RDKit::Bond*’ to ‘const RDKit::Atom*’
+dockmol.cpp:1905:55: error: conversion from ‘std::vector<unsigned int>::iterator {aka __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int> >}’ to non-scalar type ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ requested
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                         ~~~~~~~~~~~~~~^~
+dockmol.cpp:1905:62: error: no match for ‘operator<’ (operand types are ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ and ‘std::vector<unsigned int>::iterator {aka __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int> >}’)
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                           ~~~^~~~~~~~~~~~~~~~
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:64:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_pair.h:449:5: note: candidate: template<class _T1, class _T2> constexpr bool std::operator<(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)
+     operator<(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_pair.h:449:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::pair<_T1, _T2>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:305:5: note: candidate: template<class _Iterator> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)
+     operator<(const reverse_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:305:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:343:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)
+     operator<(const reverse_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:343:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:1142:5: note: candidate: template<class _IteratorL, class _IteratorR> bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)
+     operator<(const move_iterator<_IteratorL>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:1142:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::move_iterator<_IteratorL>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:1148:5: note: candidate: template<class _Iterator> bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorL>&)
+     operator<(const move_iterator<_Iterator>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:1148:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::move_iterator<_IteratorL>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/string:52:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/locale_classes.h:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/ios_base.h:41,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:42,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/basic_string.h:5892:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/basic_string.h:5892:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/string:52:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/locale_classes.h:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/ios_base.h:41,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:42,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/basic_string.h:5905:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&, const _CharT*)
+     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/basic_string.h:5905:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/string:52:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/locale_classes.h:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/ios_base.h:41,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:42,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/basic_string.h:5917:5: note: candidate: template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Alloc>&)
+     operator<(const _CharT* __lhs,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/basic_string.h:5917:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   mismatched types ‘const _CharT*’ and ‘__gnu_cxx::__normal_iterator<int*, std::vector<int> >’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/ios_base.h:46:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:42,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/system_error:208:3: note: candidate: bool std::operator<(const std::error_code&, const std::error_code&)
+   operator<(const error_code& __lhs, const error_code& __rhs) noexcept
+   ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/system_error:208:3: note:   no known conversion for argument 1 from ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ to ‘const std::error_code&’
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/system_error:282:3: note: candidate: bool std::operator<(const std::error_condition&, const std::error_condition&)
+   operator<(const error_condition& __lhs,
+   ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/system_error:282:3: note:   no known conversion for argument 1 from ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ to ‘const std::error_condition&’
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/vector:64:0,
+                 from dockmol.h:7,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_vector.h:1613:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::vector<_Tp, _Alloc>&, const std::vector<_Tp, _Alloc>&)
+     operator<(const vector<_Tp, _Alloc>& __x, const vector<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_vector.h:1613:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::vector<_Tp, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/map:60:0,
+                 from utils.h:5,
+                 from dockmol.h:8,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_tree.h:1543:5: note: candidate: template<class _Key, class _Val, class _KeyOfValue, class _Compare, class _Alloc> bool std::operator<(const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&, const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>&)
+     operator<(const _Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_tree.h:1543:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::_Rb_tree<_Key, _Val, _KeyOfValue, _Compare, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/tuple:39:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_map.h:63,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/map:61,
+                 from utils.h:5,
+                 from dockmol.h:8,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/array:262:5: note: candidate: template<class _Tp, long unsigned int _Nm> bool std::operator<(const std::array<_Tp, _Nm>&, const std::array<_Tp, _Nm>&)
+     operator<(const array<_Tp, _Nm>& __a, const array<_Tp, _Nm>& __b)
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/array:262:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::array<_Tp, _Nm>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_map.h:63:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/map:61,
+                 from utils.h:5,
+                 from dockmol.h:8,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/tuple:1410:5: note: candidate: template<class ... _TElements, class ... _UElements> constexpr bool std::operator<(const std::tuple<_Tps ...>&, const std::tuple<_Args2 ...>&)
+     operator<(const tuple<_TElements...>& __t,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/tuple:1410:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::tuple<_Tps ...>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/map:61:0,
+                 from utils.h:5,
+                 from dockmol.h:8,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_map.h:1397:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator<(const std::map<_Key, _Tp, _Compare, _Alloc>&, const std::map<_Key, _Tp, _Compare, _Alloc>&)
+     operator<(const map<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_map.h:1397:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::map<_Key, _Tp, _Compare, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/map:62:0,
+                 from utils.h:5,
+                 from dockmol.h:8,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_multimap.h:1062:5: note: candidate: template<class _Key, class _Tp, class _Compare, class _Alloc> bool std::operator<(const std::multimap<_Key, _Tp, _Compare, _Alloc>&, const std::multimap<_Key, _Tp, _Compare, _Alloc>&)
+     operator<(const multimap<_Key, _Tp, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_multimap.h:1062:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::multimap<_Key, _Tp, _Compare, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/list:63:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_list.h:1918:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::__cxx11::list<_Tp, _Alloc>&, const std::__cxx11::list<_Tp, _Alloc>&)
+     operator<(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_list.h:1918:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::__cxx11::list<_Tp, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/set:61:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:19,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_set.h:930:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator<(const std::set<_Key, _Compare, _Alloc>&, const std::set<_Key, _Compare, _Alloc>&)
+     operator<(const set<_Key, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_set.h:930:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::set<_Key, _Compare, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/set:62:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:19,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_multiset.h:913:5: note: candidate: template<class _Key, class _Compare, class _Alloc> bool std::operator<(const std::multiset<_Key, _Compare, _Alloc>&, const std::multiset<_Key, _Compare, _Alloc>&)
+     operator<(const multiset<_Key, _Compare, _Alloc>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_multiset.h:913:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::multiset<_Key, _Compare, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/deque:64:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/detail/container_fwd.hpp:91,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:22,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_deque.h:293:5: note: candidate: template<class _Tp, class _Ref, class _Ptr> bool std::operator<(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _Ref, _Ptr>&)
+     operator<(const _Deque_iterator<_Tp, _Ref, _Ptr>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_deque.h:293:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/deque:64:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/detail/container_fwd.hpp:91,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:22,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_deque.h:301:5: note: candidate: template<class _Tp, class _RefL, class _PtrL, class _RefR, class _PtrR> bool std::operator<(const std::_Deque_iterator<_Tp, _Ref, _Ptr>&, const std::_Deque_iterator<_Tp, _RefR, _PtrR>&)
+     operator<(const _Deque_iterator<_Tp, _RefL, _PtrL>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_deque.h:301:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::_Deque_iterator<_Tp, _Ref, _Ptr>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/deque:64:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/detail/container_fwd.hpp:91,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:22,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_deque.h:2276:5: note: candidate: template<class _Tp, class _Alloc> bool std::operator<(const std::deque<_Tp, _Alloc>&, const std::deque<_Tp, _Alloc>&)
+     operator<(const deque<_Tp, _Alloc>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_deque.h:2276:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::deque<_Tp, _Alloc>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:80:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/unique_ptr.h:717:5: note: candidate: template<class _Tp, class _Dp, class _Up, class _Ep> bool std::operator<(const std::unique_ptr<_Tp, _Dp>&, const std::unique_ptr<_Up, _Ep>&)
+     operator<(const unique_ptr<_Tp, _Dp>& __x,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/unique_ptr.h:717:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:80:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/unique_ptr.h:728:5: note: candidate: template<class _Tp, class _Dp> bool std::operator<(const std::unique_ptr<_Tp, _Dp>&, std::nullptr_t)
+     operator<(const unique_ptr<_Tp, _Dp>& __x, nullptr_t)
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/unique_ptr.h:728:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:80:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/unique_ptr.h:734:5: note: candidate: template<class _Tp, class _Dp> bool std::operator<(std::nullptr_t, const std::unique_ptr<_Tp, _Dp>&)
+     operator<(nullptr_t, const unique_ptr<_Tp, _Dp>& __x)
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/unique_ptr.h:734:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<unsigned int>::iterator {aka __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int> >}’ is not derived from ‘const std::unique_ptr<_Tp, _Dp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:52:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:81,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr_base.h:1441:5: note: candidate: template<class _Tp, class _Up, __gnu_cxx::_Lock_policy _Lp> bool std::operator<(const std::__shared_ptr<_Tp1, _Lp>&, const std::__shared_ptr<_Tp2, _Lp>&)
+     operator<(const __shared_ptr<_Tp, _Lp>& __a,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr_base.h:1441:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::__shared_ptr<_Tp1, _Lp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:52:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:81,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr_base.h:1452:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator<(const std::__shared_ptr<_Tp, _Lp>&, std::nullptr_t)
+     operator<(const __shared_ptr<_Tp, _Lp>& __a, nullptr_t) noexcept
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr_base.h:1452:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:52:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:81,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr_base.h:1460:5: note: candidate: template<class _Tp, __gnu_cxx::_Lock_policy _Lp> bool std::operator<(std::nullptr_t, const std::__shared_ptr<_Tp, _Lp>&)
+     operator<(nullptr_t, const __shared_ptr<_Tp, _Lp>& __a) noexcept
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr_base.h:1460:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<unsigned int>::iterator {aka __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int> >}’ is not derived from ‘const std::__shared_ptr<_Tp, _Lp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:81:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:398:5: note: candidate: template<class _Tp, class _Up> bool std::operator<(const std::shared_ptr<_Tp>&, const std::shared_ptr<_Up>&)
+     operator<(const shared_ptr<_Tp>& __a, const shared_ptr<_Up>& __b) noexcept
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:398:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::shared_ptr<_Tp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:81:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:408:5: note: candidate: template<class _Tp> bool std::operator<(const std::shared_ptr<_Tp>&, std::nullptr_t)
+     operator<(const shared_ptr<_Tp>& __a, nullptr_t) noexcept
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:408:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<int>::iterator {aka __gnu_cxx::__normal_iterator<int*, std::vector<int> >}’ is not derived from ‘const std::shared_ptr<_Tp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/memory:81:0,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/extensions.hpp:36,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/container_hash/hash.hpp:760,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/functional/hash.hpp:6,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered/unordered_set.hpp:18,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/unordered_set.hpp:17,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/boost_gnu/include/boost/graph/adjacency_list.hpp:21,
+                 from /gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/rdkit-Release_2019_09_1/Code/GraphMol/ROMol.h:27,
+                 from dockmol.h:16,
+                 from dockmol.cpp:4:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:416:5: note: candidate: template<class _Tp> bool std::operator<(std::nullptr_t, const std::shared_ptr<_Tp>&)
+     operator<(nullptr_t, const shared_ptr<_Tp>& __a) noexcept
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/shared_ptr.h:416:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   ‘std::vector<unsigned int>::iterator {aka __gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int> >}’ is not derived from ‘const std::shared_ptr<_Tp>’
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:895:5: note: candidate: template<class _Iterator, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)
+     operator<(const __normal_iterator<_Iterator, _Container>& __lhs,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:895:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   deduced conflicting types for parameter ‘_Iterator’ (‘int*’ and ‘unsigned int*’)
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+In file included from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_algobase.h:67:0,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/char_traits.h:39,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ios:40,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/ostream:38,
+                 from /gpfs/software/gcc/7.2.0/include/c++/7.2.0/iostream:39,
+                 from dockmol.cpp:1:
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:888:5: note: candidate: template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)
+     operator<(const __normal_iterator<_IteratorL, _Container>& __lhs,
+     ^~~~~~~~
+/gpfs/software/gcc/7.2.0/include/c++/7.2.0/bits/stl_iterator.h:888:5: note:   template argument deduction/substitution failed:
+dockmol.cpp:1905:77: note:   deduced conflicting types for parameter ‘_Container’ (‘std::vector<int>’ and ‘std::vector<unsigned int>’)
+         for (vector<int>::iterator it = toModIdx.begin(); it < toModIdx.end(); ++it) {
+                                                                             ^
+dockmol.cpp:1919:11: error: expected ‘;’ before ‘}’ token
+           }
+           ^
+make[1]: *** [dockmol.o] Error 1
+make[1]: Leaving directory `/gpfs/projects/rizzo/gduarteramos/zzz.programs_gduarteramos/dock6_beta_rdkit/src/dock'
+make: *** [dock] Error 2

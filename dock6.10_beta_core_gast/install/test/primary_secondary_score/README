@@ -1,0 +1,31 @@
+TITLE: Primary/Secondary Scoring
+
+EXECUTABLES TESTED:  
+	dock6
+
+FUNCTIONS TESTED:
+	Output functions for primary and secondary scoring
+    Primary --> Analyze --> Secondary
+	
+WALL CLOCK TIME:
+	 26.07 secs
+
+FILES USED:
+	secondary1.dockin		#pirmary verbose output
+	secondary2.dockin		#primary ranking and clustering (library)
+	secondary3.dockin		#primary + secondary verbose output scoring multiple conformers
+	secondary4.dockin		#primary + secondary ranking multiple conformers (library)
+    secondary5.dockin       #primary + secondary ranking bestscoring conformer (library)
+    secondary6.dockin       #primary + secondary clustering 
+    secondary7.dockin       #primary + secondary with minimization 
+	lig.mol2		#ligand structure file
+	struct.sph		#receptor sphere file
+	chem.defn		#chem parameter input file
+	flex.defn		#flex atom definition file
+	flex_drive.tbl		#flex torsional drive file
+	vdw.defn		#vdw parameter file used to create grid
+
+FILES GENERATED:
+	XXX_orients.mol2	#orientations from input file
+	XXX_conformers.mol2	#conformations from input file
+	XXX_scored.mol2		#best scoring pose from input file	

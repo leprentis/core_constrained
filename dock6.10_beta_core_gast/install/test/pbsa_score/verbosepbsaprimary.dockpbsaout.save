@@ -1,0 +1,184 @@
+
+
+
+--------------------------------------
+DOCK v6.8
+
+Released April 2017
+Copyright UCSF
+--------------------------------------
+
+
+Conformational Sampling Parameters
+------------------------------------------------------------------------------------------
+conformer_search_type                                        rigid
+
+Internal Energy Parameters
+------------------------------------------------------------------------------------------
+use_internal_energy                                          no
+
+Molecule Library Input Parameters
+------------------------------------------------------------------------------------------
+ligand_atom_file                                             lig.mol2
+limit_max_ligands                                            no
+skip_molecule                                                no
+read_mol_solvation                                           no
+calculate_rmsd                                               no
+
+Database Filter Parameters
+------------------------------------------------------------------------------------------
+use_database_filter                                          no
+
+Orient Ligand Parameters
+------------------------------------------------------------------------------------------
+orient_ligand                                                no
+
+Bump Filter Parameters
+------------------------------------------------------------------------------------------
+bump_filter                                                  no
+
+Master Score Parameters
+------------------------------------------------------------------------------------------
+score_molecules                                              yes
+
+Contact Score Parameters
+------------------------------------------------------------------------------------------
+contact_score_primary                                        no
+contact_score_secondary                                      no
+
+Grid Score Parameters
+------------------------------------------------------------------------------------------
+grid_score_primary                                           no
+grid_score_secondary                                         no
+
+MultiGrid Score Parameters
+------------------------------------------------------------------------------------------
+multigrid_score_primary                                      no
+multigrid_score_secondary                                    no
+
+Dock3.5 Score Parameters
+------------------------------------------------------------------------------------------
+dock3.5_score_primary                                        no
+dock3.5_score_secondary                                      no
+
+Continuous Energy Score Parameters
+------------------------------------------------------------------------------------------
+continuous_score_primary                                     no
+continuous_score_secondary                                   no
+
+Footprint Similarity Score Parameters
+------------------------------------------------------------------------------------------
+footprint_similarity_score_primary                           no
+footprint_similarity_score_secondary                         no
+
+Pharmacophore Similarity Score Parameters
+------------------------------------------------------------------------------------------
+pharmacophore_score_primary                                  no
+pharmacophore_score_secondary                                no
+
+Descriptor Score Parameters
+------------------------------------------------------------------------------------------
+descriptor_score_primary                                     no
+descriptor_score_secondary                                   no
+
+Zou GB/SA Score Parameters
+------------------------------------------------------------------------------------------
+gbsa_zou_score_primary                                       no
+gbsa_zou_score_secondary                                     no
+
+Hawkins GB/SA Score Parameters
+------------------------------------------------------------------------------------------
+gbsa_hawkins_score_primary                                   no
+gbsa_hawkins_score_secondary                                 no
+
+SASA Score Parameters
+------------------------------------------------------------------------------------------
+SASA_score_primary                                           no
+SASA_score_secondary                                         no
+
+PB/SA Score Parameters
+------------------------------------------------------------------------------------------
+pbsa_score_primary                                           yes
+pbsa_score_secondary                                         no
+pbsa_receptor_filename                                       rec.mol2
+pbsa_interior_dielectric                                     2.0
+pbsa_exterior_dielectric                                     78.5
+pbsa_vdw_grid_prefix                                         ../grid_generation/grid
+
+Amber Score Parameters
+------------------------------------------------------------------------------------------
+amber_score_secondary                                        no
+
+Note: No secondary scoring function selected.
+
+
+Simplex Minimization Parameters
+------------------------------------------------------------------------------------------
+minimize_ligand                                              no
+
+Atom Typing Parameters
+------------------------------------------------------------------------------------------
+atom_model                                                   all
+vdw_defn_file                                                ../../../parameters/vdw_AMBER_parm99.defn
+flex_defn_file                                               ../../../parameters/flex.defn
+flex_drive_file                                              ../../../parameters/flex_drive.tbl
+
+Molecule Library Output Parameters
+------------------------------------------------------------------------------------------
+ligand_outfile_prefix                                        verbosepbsaprimary
+write_orientations                                           no
+num_scored_conformers                                        1
+rank_ligands                                                 no
+------------------------------------------------------------------------------------------
+
+Initializing Library File Routines...
+Initializing PB/SA Score Routines...
+Initializing Grid Score Routines...
+ Reading the energy grid from ../grid_generation/grid.nrg
+ Done reading the energy grid.
+ Reading the grid box quantifiers from ../grid_generation/grid.bmp
+	size = 35340
+	spacing = 0.5
+	origin = 15.9315,2.891,50.765
+	span = 30,31,38
+ Done reading the grid box quantifiers.
+
+-----------------------------------
+VERBOSE MOLECULE STATS
+
+  Number of heavy atoms = 2019
+  Number of rotatable bonds = 1314
+  Formal Charge = 3.00
+  Molecular Weight = 28737.97
+  Heavy Atoms = 2019
+Done Initializing PB/SA Score Routines.
+
+-----------------------------------
+VERBOSE MOLECULE STATS
+
+  Number of heavy atoms = 23
+  Number of rotatable bonds = 1
+  Formal Charge = 0.00
+  Molecular Weight = 314.47
+  Heavy Atoms = 23
+LIGAND   PB=195.097	SA=13.0419
+RECEPTOR PB=52921.2	SA=307.47
+COMPLEX  PB=53124.1	SA=302.412
+
+-----------------------------------
+Molecule:  C1 
+
+ Elapsed time for docking:	1 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+   PB/SA Score:          -46.531303
+           vdw:          -36.287334
+            pb:            7.856411
+            sa:          -18.100378
+
+
+1 Molecules Processed
+Total elapsed time:	5 seconds

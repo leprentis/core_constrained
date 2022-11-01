@@ -1,0 +1,409 @@
+
+
+
+--------------------------------------
+DOCK v6.9
+
+Released November 2018
+Copyright UCSF
+--------------------------------------
+
+
+Conformational Sampling Parameters
+------------------------------------------------------------------------------------------
+conformer_search_type                                        rigid
+
+Internal Energy Parameters
+------------------------------------------------------------------------------------------
+use_internal_energy                                          no
+
+Molecule Library Input Parameters
+------------------------------------------------------------------------------------------
+ligand_atom_file                                             multi_lig.mol2
+limit_max_ligands                                            no
+skip_molecule                                                no
+read_mol_solvation                                           no
+calculate_rmsd                                               no
+
+Database Filter Parameters
+------------------------------------------------------------------------------------------
+use_database_filter                                          no
+
+Orient Ligand Parameters
+------------------------------------------------------------------------------------------
+orient_ligand                                                yes
+automated_matching                                           yes
+receptor_site_file                                           ../sphere_generation/selected_spheres.sph.save
+max_orientations                                             50
+critical_points                                              no
+chemical_matching                                            no
+use_ligand_spheres                                           no
+
+Bump Filter Parameters
+------------------------------------------------------------------------------------------
+bump_filter                                                  no
+
+Master Score Parameters
+------------------------------------------------------------------------------------------
+score_molecules                                              yes
+
+Contact Score Parameters
+------------------------------------------------------------------------------------------
+contact_score_primary                                        yes
+contact_score_secondary                                      no
+contact_score_cutoff_distance                                4.5
+contact_score_clash_overlap                                  0.75
+contact_score_clash_penalty                                  50
+contact_score_grid_prefix                                    ../gbsa_grid_generation/grid
+
+Grid Score Parameters
+------------------------------------------------------------------------------------------
+grid_score_secondary                                         no
+
+MultiGrid Score Parameters
+------------------------------------------------------------------------------------------
+multigrid_score_secondary                                    no
+
+Dock3.5 Score Parameters
+------------------------------------------------------------------------------------------
+dock3.5_score_secondary                                      no
+
+Continuous Energy Score Parameters
+------------------------------------------------------------------------------------------
+continuous_score_secondary                                   no
+
+Footprint Similarity Score Parameters
+------------------------------------------------------------------------------------------
+footprint_similarity_score_secondary                         no
+
+Pharmacophore Similarity Score Parameters
+------------------------------------------------------------------------------------------
+pharmacophore_score_secondary                                no
+
+Descriptor Score Parameters
+------------------------------------------------------------------------------------------
+descriptor_score_secondary                                   no
+
+Zou GB/SA Score Parameters
+------------------------------------------------------------------------------------------
+gbsa_zou_score_secondary                                     yes
+gbsa_zou_gb_grid_prefix                                      ../nchemgrid_GB_grid_generation/zou_grid
+gbsa_zou_sa_grid_prefix                                      ../nchemgrid_SA_grid_generation/zou_grid
+gbsa_zou_vdw_grid_prefix                                     ../gbsa_grid_generation/grid
+gbsa_zou_screen_file                                         screen.in
+gbsa_zou_solvent_dielectric                                  78.300003
+
+Simplex Minimization Parameters
+------------------------------------------------------------------------------------------
+minimize_ligand                                              no
+
+Atom Typing Parameters
+------------------------------------------------------------------------------------------
+atom_model                                                   all
+vdw_defn_file                                                ../../../parameters/vdw_AMBER_parm99.defn
+flex_defn_file                                               ../../../parameters/flex.defn
+flex_drive_file                                              ../../../parameters/flex_drive.tbl
+
+Molecule Library Output Parameters
+------------------------------------------------------------------------------------------
+ligand_outfile_prefix                                        orientrigidcontactprimaryzou_gbsasecondarymulti
+write_orientations                                           no
+num_primary_scored_conformers_rescored                       1
+num_secondary_scored_conformers                              1
+rank_primary_ligands                                         no
+rank_secondary_ligands                                       no
+------------------------------------------------------------------------------------------
+Initializing Library File Routines...
+Initializing Orienting Routines...
+Initializing Contact Score Routines...
+ Reading the contact grid from ../gbsa_grid_generation/grid.cnt
+ Done reading the contact grid.
+ Reading the grid box quantifiers from ../gbsa_grid_generation/grid.bmp
+ Done reading the grid box quantifiers.
+ Reading the bump grid from ../gbsa_grid_generation/grid.bmp
+ Done reading the bump grid.
+Initializing Zou GB/SA Score Routines...
+Initializing Grid Score Routines...
+ Reading the energy grid from ../gbsa_grid_generation/grid.nrg
+ Done reading the energy grid.
+ Reading the grid box quantifiers from ../gbsa_grid_generation/grid.bmp
+ Done reading the grid box quantifiers.
+ Reading from GB bump grid file ../nchemgrid_GB_grid_generation/zou_grid.bmp
+ Done reading from GB bump grid file.
+ Reading from GB receptor grid file ../nchemgrid_GB_grid_generation/zou_grid.rec
+ Done reading from GB receptor grid file.
+ Reading from SA bump grid file ../nchemgrid_SA_grid_generation/zou_grid.bmp
+ Done reading from SA bump grid file.
+ Reading from SA receptor grid file ../nchemgrid_SA_grid_generation/zou_grid.sas
+ Done reading from SA receptor grid file.
+ Reading from SA receptor info grid file ../nchemgrid_SA_grid_generation/zou_grid.sasmark
+ Done reading from SA receptor info grid file.
+Done Initializing Zou GB/SA Score Routines.
+
+-----------------------------------
+Molecule: ZINC00158442
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		50
+ Conformations:		38
+
+ Primary Score
+                       Contact_Score:          -42.000000
+
+-----------------------------------
+Molecule: ZINC00158751
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		50
+ Conformations:		48
+
+ Primary Score
+                       Contact_Score:          -48.000000
+
+-----------------------------------
+Molecule: ZINC00013564
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		50
+ Conformations:		42
+
+ Primary Score
+                       Contact_Score:          -50.000000
+
+-----------------------------------
+Molecule: ZINC01555236
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		50
+ Conformations:		32
+
+ Primary Score
+                       Contact_Score:          -76.000000
+
+-----------------------------------
+Molecule: ZINC00150863
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		50
+ Conformations:		50
+
+ Primary Score
+                       Contact_Score:          -40.000000
+
+-----------------------------------
+Molecule: ZINC00152265
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		50
+ Conformations:		45
+
+ Primary Score
+                       Contact_Score:          -56.000000
+
+-----------------------------------
+Molecule: ZINC00152280
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		50
+ Conformations:		42
+
+ Primary Score
+                       Contact_Score:          -56.000000
+
+-----------------------------------
+Molecule: ZINC00157111
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		50
+ Conformations:		48
+
+ Primary Score
+                       Contact_Score:          -53.000000
+
+-----------------------------------
+Molecule: ZINC00157152
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		50
+ Conformations:		48
+
+ Primary Score
+                       Contact_Score:          -46.000000
+
+-----------------------------------
+Molecule: ZINC00157402
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		50
+ Conformations:		39
+
+ Primary Score
+                       Contact_Score:          -51.000000
+
+-----------------------------------
+Molecule: ZINC00157467
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		50
+ Conformations:		46
+
+ Primary Score
+                       Contact_Score:          -46.000000
+
+-----------------------------------
+Molecule: ZINC00157960
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		50
+ Conformations:		42
+
+ Primary Score
+                       Contact_Score:          -13.000000
+
+-----------------------------------
+Molecule: ZINC00158442
+
+ Secondary Score
+                      Zou_GBSA_Score:           23.059584
+                 Zou_GBSA_vdw_energy:           12.949214
+                  Zou_GBSA_gb_energy:            5.781620
+                  Zou_GBSA_sa_energy:            9.828750
+        Zou_GBSA_delta_SAS_hp_energy:           -5.500000
+
+-----------------------------------
+Molecule: ZINC00158751
+
+ Secondary Score
+                      Zou_GBSA_Score:           39.230133
+                 Zou_GBSA_vdw_energy:           27.809869
+                  Zou_GBSA_gb_energy:            8.346514
+                  Zou_GBSA_sa_energy:            5.073750
+        Zou_GBSA_delta_SAS_hp_energy:           -2.000000
+
+-----------------------------------
+Molecule: ZINC00013564
+
+ Secondary Score
+                      Zou_GBSA_Score:           75.923889
+                 Zou_GBSA_vdw_energy:           63.757526
+                  Zou_GBSA_gb_energy:           10.395113
+                  Zou_GBSA_sa_energy:            7.665000
+        Zou_GBSA_delta_SAS_hp_energy:           -5.893750
+
+-----------------------------------
+Molecule: ZINC01555236
+
+ Secondary Score
+                      Zou_GBSA_Score:           93.273766
+                 Zou_GBSA_vdw_energy:           78.667273
+                  Zou_GBSA_gb_energy:            7.446495
+                  Zou_GBSA_sa_energy:           12.716250
+        Zou_GBSA_delta_SAS_hp_energy:           -5.556250
+
+-----------------------------------
+Molecule: ZINC00150863
+
+ Secondary Score
+                      Zou_GBSA_Score:          111.268791
+                 Zou_GBSA_vdw_energy:          102.463312
+                  Zou_GBSA_gb_energy:            7.386732
+                  Zou_GBSA_sa_energy:            4.368750
+        Zou_GBSA_delta_SAS_hp_energy:           -2.950000
+
+-----------------------------------
+Molecule: ZINC00152265
+
+ Secondary Score
+                      Zou_GBSA_Score:          424.716492
+                 Zou_GBSA_vdw_energy:          409.166235
+                  Zou_GBSA_gb_energy:           13.034021
+                  Zou_GBSA_sa_energy:            5.103750
+        Zou_GBSA_delta_SAS_hp_energy:           -2.587500
+
+-----------------------------------
+Molecule: ZINC00152280
+
+ Secondary Score
+                      Zou_GBSA_Score:          244.280106
+                 Zou_GBSA_vdw_energy:          234.332190
+                  Zou_GBSA_gb_energy:            7.386665
+                  Zou_GBSA_sa_energy:            5.842500
+        Zou_GBSA_delta_SAS_hp_energy:           -3.281250
+
+-----------------------------------
+Molecule: ZINC00157111
+
+ Secondary Score
+                      Zou_GBSA_Score:           22.717329
+                 Zou_GBSA_vdw_energy:            3.129462
+                  Zou_GBSA_gb_energy:           15.986618
+                  Zou_GBSA_sa_energy:            6.476250
+        Zou_GBSA_delta_SAS_hp_energy:           -2.875000
+
+-----------------------------------
+Molecule: ZINC00157152
+
+ Secondary Score
+                      Zou_GBSA_Score:          478.050201
+                 Zou_GBSA_vdw_energy:          456.224451
+                  Zou_GBSA_gb_energy:           19.084515
+                  Zou_GBSA_sa_energy:            5.441250
+        Zou_GBSA_delta_SAS_hp_energy:           -2.700000
+
+-----------------------------------
+Molecule: ZINC00157402
+
+ Secondary Score
+                      Zou_GBSA_Score:           82.335617
+                 Zou_GBSA_vdw_energy:           71.294225
+                  Zou_GBSA_gb_energy:            8.291391
+                  Zou_GBSA_sa_energy:            5.868750
+        Zou_GBSA_delta_SAS_hp_energy:           -3.118750
+
+-----------------------------------
+Molecule: ZINC00157467
+
+ Secondary Score
+                      Zou_GBSA_Score:           10.964820
+                 Zou_GBSA_vdw_energy:            1.852192
+                  Zou_GBSA_gb_energy:            6.928878
+                  Zou_GBSA_sa_energy:            7.627500
+        Zou_GBSA_delta_SAS_hp_energy:           -5.443750
+
+-----------------------------------
+Molecule: ZINC00157960
+
+ Secondary Score
+                      Zou_GBSA_Score:      9034444.000000
+                 Zou_GBSA_vdw_energy:      9034428.600000
+                  Zou_GBSA_gb_energy:           14.549959
+                  Zou_GBSA_sa_energy:            4.380000
+        Zou_GBSA_delta_SAS_hp_energy:           -3.250000
+
+
+12 Molecules Processed
+Total elapsed time:	0 seconds

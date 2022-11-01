@@ -1,0 +1,1475 @@
+
+
+
+--------------------------------------
+DOCK v6.9
+
+Released November 2018
+Copyright UCSF
+--------------------------------------
+
+
+Conformational Sampling Parameters
+------------------------------------------------------------------------------------------
+conformer_search_type                                        rigid
+
+Internal Energy Parameters
+------------------------------------------------------------------------------------------
+use_internal_energy                                          no
+
+Molecule Library Input Parameters
+------------------------------------------------------------------------------------------
+ligand_atom_file                                             ncidiv_p1.0.mol2
+limit_max_ligands                                            no
+skip_molecule                                                no
+read_mol_solvation                                           no
+calculate_rmsd                                               no
+
+Database Filter Parameters
+------------------------------------------------------------------------------------------
+use_database_filter                                          yes
+dbfilter_max_heavy_atoms                                     40
+dbfilter_min_heavy_atoms                                     10
+dbfilter_max_rot_bonds                                       5
+dbfilter_min_rot_bonds                                       0
+dbfilter_max_molwt                                           400
+dbfilter_min_molwt                                           200
+dbfilter_max_formal_charge                                   1.0
+dbfilter_min_formal_charge                                   -1.0
+
+Orient Ligand Parameters
+------------------------------------------------------------------------------------------
+orient_ligand                                                no
+
+Bump Filter Parameters
+------------------------------------------------------------------------------------------
+bump_filter                                                  no
+
+Master Score Parameters
+------------------------------------------------------------------------------------------
+score_molecules                                              no
+
+Atom Typing Parameters
+------------------------------------------------------------------------------------------
+atom_model                                                   all
+vdw_defn_file                                                ../../../parameters/vdw_AMBER_parm99.defn
+flex_defn_file                                               ../../../parameters/flex.defn
+flex_drive_file                                              ../../../parameters/flex_drive.tbl
+
+Molecule Library Output Parameters
+------------------------------------------------------------------------------------------
+ligand_outfile_prefix                                        database
+write_orientations                                           no
+num_scored_conformers                                        1
+rank_ligands                                                 no
+------------------------------------------------------------------------------------------
+Initializing Library File Routines...
+
+-----------------------------------
+Molecule: ZINC00065175
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC00092157
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC00041118
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC01566453
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC01566453
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC01566453
+
+Filter Rejected: Formal charge too high: 2.00 > 1.00
+
+
+-----------------------------------
+Molecule: ZINC01622269
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC00110365
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC00110358
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC04237573
+
+Filter Rejected: Not enough heavy atoms: 9 < 10
+
+
+-----------------------------------
+Molecule: ZINC04430753
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC04430753
+
+Filter Rejected: Too many rotatable bonds: 6 > 5
+
+
+-----------------------------------
+Molecule: ZINC04715161
+
+Filter Rejected: Molecular Weight too low: 184.20 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC05120920
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC05120920
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC00151887
+
+Filter Rejected: Molecular Weight too low: 196.23 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC03832421
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC12367936
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC12672242
+
+Filter Rejected: Molecular Weight too high: 410.52 > 400.00
+
+
+-----------------------------------
+Molecule: ZINC12672252
+
+Filter Rejected: Molecular Weight too high: 410.52 > 400.00
+
+
+-----------------------------------
+Molecule: ZINC05647206
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC06188101
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13099549
+
+Filter Rejected: Too many rotatable bonds: 6 > 5
+Filter Rejected: Formal charge too high: 2.00 > 1.00
+
+
+-----------------------------------
+Molecule: ZINC13099550
+
+Filter Rejected: Too many rotatable bonds: 6 > 5
+Filter Rejected: Formal charge too high: 2.00 > 1.00
+
+
+-----------------------------------
+Molecule: ZINC13099551
+
+Filter Rejected: Too many rotatable bonds: 6 > 5
+Filter Rejected: Formal charge too high: 2.00 > 1.00
+
+
+-----------------------------------
+Molecule: ZINC13125763
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13125763
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13130015
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13130015
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13140234
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13143021
+
+Filter Rejected: Molecular Weight too low: 189.24 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC13144613
+
+Filter Rejected: Molecular Weight too low: 139.22 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC13144614
+
+Filter Rejected: Too many rotatable bonds: 6 > 5
+
+
+-----------------------------------
+Molecule: ZINC13152247
+
+Filter Rejected: Molecular Weight too high: 463.15 > 400.00
+
+
+-----------------------------------
+Molecule: ZINC13152249
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13152278
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13152279
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13152291
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13154317
+
+Filter Rejected: Molecular Weight too low: 185.17 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC13154321
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC04822288
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13207617
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13281671
+
+Filter Rejected: Molecular Weight too low: 185.21 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC05114817
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC05115990
+
+Filter Rejected: Too many rotatable bonds: 6 > 5
+Filter Rejected: Formal charge too high: 2.00 > 1.00
+
+
+-----------------------------------
+Molecule: ZINC13152247
+
+Filter Rejected: Molecular Weight too high: 463.15 > 400.00
+
+
+-----------------------------------
+Molecule: ZINC13284902
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13284902
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC04878491
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC04213833
+
+Filter Rejected: Too many rotatable bonds: 9 > 5
+Filter Rejected: Molecular Weight too high: 520.50 > 400.00
+
+
+-----------------------------------
+Molecule: ZINC13597430
+
+Filter Rejected: Too many rotatable bonds: 6 > 5
+
+
+-----------------------------------
+Molecule: ZINC13597738
+
+Filter Rejected: Formal charge too high: 2.00 > 1.00
+
+
+-----------------------------------
+Molecule: ZINC01481981
+
+Filter Rejected: Too many rotatable bonds: 6 > 5
+
+
+-----------------------------------
+Molecule: ZINC01587338
+
+Filter Rejected: Molecular Weight too low: 156.14 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC01653222
+
+Filter Rejected: Molecular Weight too low: 199.19 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC01668896
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC15881824
+
+Filter Rejected: Molecular Weight too low: 139.22 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC01688662
+
+Filter Rejected: Not enough heavy atoms: 9 < 10
+Filter Rejected: Molecular Weight too low: 165.00 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC15924541
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC15924541
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC15952559
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC03850501
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC04824024
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC04824022
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC04879418
+
+Filter Rejected: Molecular Weight too low: 169.12 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC04879418
+
+Filter Rejected: Molecular Weight too low: 169.12 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC04877299
+
+Filter Rejected: Formal charge too high: 2.00 > 1.00
+
+
+-----------------------------------
+Molecule: ZINC05027641
+
+Filter Rejected: Molecular Weight too low: 182.61 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC05279843
+
+Filter Rejected: Formal charge too high: 2.00 > 1.00
+
+
+-----------------------------------
+Molecule: ZINC08560067
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC00093738
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC17529946
+
+Filter Rejected: Too many rotatable bonds: 7 > 5
+
+
+-----------------------------------
+Molecule: ZINC17529946
+
+Filter Rejected: Too many rotatable bonds: 7 > 5
+
+
+-----------------------------------
+Molecule: ZINC18083898
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC18085106
+
+Filter Rejected: Too many rotatable bonds: 6 > 5
+
+
+-----------------------------------
+Molecule: ZINC18085106
+
+Filter Rejected: Too many rotatable bonds: 6 > 5
+
+
+-----------------------------------
+Molecule: ZINC18142874
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC08560067
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13152611
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13152611
+
+Filter Rejected: Formal charge too high: 2.00 > 1.00
+
+
+-----------------------------------
+Molecule: ZINC01843030
+
+Filter Rejected: Molecular Weight too low: 157.11 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC01843029
+
+Filter Rejected: Molecular Weight too low: 157.11 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC17424892
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC19362650
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC19362650
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC19362651
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC19362651
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC19366557
+
+Filter Rejected: Molecular Weight too low: 144.26 < 200.00
+Filter Rejected: Formal charge too high: 2.00 > 1.00
+
+
+-----------------------------------
+Molecule: ZINC13125795
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC18163421
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC18163421
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC18189380
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC18189380
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC19701771
+
+Filter Rejected: Molecular Weight too high: 427.41 > 400.00
+
+
+-----------------------------------
+Molecule: ZINC18156788
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC18056840
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC19909409
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC19909409
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC20028475
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC04428312
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC16920429
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC05551091
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC05551760
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13542620
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC01587338
+
+Filter Rejected: Molecular Weight too low: 155.13 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC13139308
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC26730911
+
+Filter Rejected: Molecular Weight too high: 427.41 > 400.00
+
+
+-----------------------------------
+Molecule: ZINC13597428
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13130187
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13597416
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13597273
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13597273
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13597276
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13597276
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13597276
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13597278
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13597219
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13597354
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC15990251
+
+Filter Rejected: Too many rotatable bonds: 7 > 5
+
+
+-----------------------------------
+Molecule: ZINC13597230
+
+Filter Rejected: Too many rotatable bonds: 9 > 5
+
+
+-----------------------------------
+Molecule: ZINC13597230
+
+Filter Rejected: Too many rotatable bonds: 9 > 5
+
+
+-----------------------------------
+Molecule: ZINC29589800
+
+Filter Rejected: Molecular Weight too low: 158.22 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC13597237
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC15990220
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC18193844
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC05422109
+
+Filter Rejected: Molecular Weight too low: 196.21 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC02018030
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13152247
+
+Filter Rejected: Molecular Weight too high: 463.15 > 400.00
+
+
+-----------------------------------
+Molecule: ZINC15990245
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC08637986
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC17995347
+
+Filter Rejected: Too many rotatable bonds: 7 > 5
+Filter Rejected: Molecular Weight too high: 431.23 > 400.00
+
+
+-----------------------------------
+Molecule: ZINC05552274
+
+Filter Rejected: Too many rotatable bonds: 6 > 5
+Filter Rejected: Molecular Weight too low: 183.21 < 200.00
+
+
+-----------------------------------
+Molecule: ZINC29589907
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13130211
+
+Filter Rejected: Formal charge too low: -3.00 < -1.00
+
+
+-----------------------------------
+Molecule: ZINC13130211
+
+Filter Rejected: Formal charge too low: -2.00 < -1.00
+
+
+-----------------------------------
+Molecule: ZINC17858074
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC17858074
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC05502368
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13597730
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13597732
+
+Filter Rejected: Too many rotatable bonds: 7 > 5
+
+
+-----------------------------------
+Molecule: ZINC13597732
+
+Filter Rejected: Too many rotatable bonds: 7 > 5
+
+
+-----------------------------------
+Molecule: ZINC13144560
+
+Filter Rejected: Too many rotatable bonds: 8 > 5
+
+
+-----------------------------------
+Molecule: ZINC06511656
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC05647206
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC05647206
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC18124911
+
+Filter Rejected: Too many rotatable bonds: 6 > 5
+Filter Rejected: Molecular Weight too high: 465.30 > 400.00
+
+
+-----------------------------------
+Molecule: ZINC29590289
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC15952559
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC15952559
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC15952559
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC15952559
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC15952559
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC15952559
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC29590292
+
+Filter Rejected: Formal charge too low: -2.00 < -1.00
+
+
+-----------------------------------
+Molecule: ZINC29590292
+
+Filter Rejected: Formal charge too low: -2.00 < -1.00
+
+
+-----------------------------------
+Molecule: ZINC05487838
+
+Filter Rejected: Molecular Weight too high: 403.24 > 400.00
+
+
+-----------------------------------
+Molecule: ZINC17949075
+
+Filter Rejected: Molecular Weight too high: 400.22 > 400.00
+Filter Rejected: Formal charge too low: -2.00 < -1.00
+
+
+-----------------------------------
+Molecule: ZINC17949075
+
+Filter Rejected: Molecular Weight too high: 400.22 > 400.00
+Filter Rejected: Formal charge too low: -2.00 < -1.00
+
+
+-----------------------------------
+Molecule: ZINC13130011
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13130011
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13130011
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC13130011
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+-----------------------------------
+Molecule: ZINC29590323
+
+Filter Rejected: Molecular Weight too low: 171.24 < 200.00
+Filter Rejected: Formal charge too high: 2.00 > 1.00
+
+
+-----------------------------------
+Molecule: ZINC17970262
+
+ Elapsed time for docking:	0 seconds
+
+ Anchors:		1
+ Orientations:		1
+ Conformations:		1
+
+
+
+164 Molecules Processed
+Total elapsed time:	0 seconds

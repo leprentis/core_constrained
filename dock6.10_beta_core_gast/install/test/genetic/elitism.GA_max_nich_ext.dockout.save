@@ -1,0 +1,656 @@
+
+
+
+--------------------------------------
+DOCK v6.9
+
+Released August 2018
+Copyright UCSF
+--------------------------------------
+
+
+Conformational Sampling Parameters
+------------------------------------------------------------------------------------------
+conformer_search_type                                        genetic
+
+Genetic Algorithm Recombination Parameters
+------------------------------------------------------------------------------------------
+ga_molecule_file                                             ga_parents.mol2
+ga_fraglib_scaffold_file                                     ../../../parameters/fraglib_scaffold.mol2
+ga_fraglib_linker_file                                       ../../../parameters/fraglib_linker.mol2
+ga_fraglib_sidechain_file                                    ../../../parameters/fraglib_sidechain.mol2
+ga_torenv_table                                              sfinal_torenv_complete.dat
+ga_max_generations                                           1
+ga_xover_sampling_method_rand                                yes
+ga_xover_max                                                 150
+ga_bond_tolerance                                            0.5
+ga_angle_cutoff                                              0.14
+ga_check_overlap                                             yes
+ga_check_only                                                no
+ga_mutate_parents                                            yes
+ga_pmut_rate                                                 0.3
+ga_omut_rate                                                 0.7
+ga_max_mut_cycles                                            5
+ga_mut_sampling_method                                       rand
+ga_num_random_picks                                          10
+ga_max_root_size                                             5
+ga_energy_cutoff                                             100
+ga_heur_unmatched_num                                        1
+ga_heur_matched_rmsd                                         2.0
+ga_constraint_mol_wt                                         500
+ga_constraint_rot_bon                                        10
+ga_constraint_H_accept                                       10
+ga_constraint_H_don                                          5
+ga_constraint_formal_charge                                  4
+ga_ensemble_size                                             28
+ga_selection_method                                          elitism
+ga_elitism_combined                                          yes
+ga_elitism_option                                            max
+ga_niching                                                   yes
+ga_niching_method                                            sharing
+ga_selection_extinction                                      yes
+ga_extinction_frequency                                      200
+ga_extinction_duration                                       50
+ga_extinction_keep                                           20
+ga_extinction_switch_selection                               no
+ga_max_num_gen_with_no_crossover                             5
+ga_output_prefix                                             elitism.GA_max_nich_ext
+
+Internal Energy Parameters
+------------------------------------------------------------------------------------------
+use_internal_energy                                          yes
+internal_energy_rep_exp                                      12
+internal_energy_cutoff                                       100.0
+Note: Internal energy only includes repulsive VDW for growth and/or minimization.
+
+Database Filter Parameters
+------------------------------------------------------------------------------------------
+use_database_filter                                          no
+
+Orient Ligand Parameters
+------------------------------------------------------------------------------------------
+orient_ligand                                                no
+
+Bump Filter Parameters
+------------------------------------------------------------------------------------------
+bump_filter                                                  no
+
+Master Score Parameters
+------------------------------------------------------------------------------------------
+score_molecules                                              yes
+
+Contact Score Parameters
+------------------------------------------------------------------------------------------
+contact_score_primary                                        no
+contact_score_secondary                                      no
+
+Grid Score Parameters
+------------------------------------------------------------------------------------------
+grid_score_primary                                           no
+grid_score_secondary                                         no
+
+MultiGrid Score Parameters
+------------------------------------------------------------------------------------------
+multigrid_score_primary                                      no
+multigrid_score_secondary                                    no
+
+Dock3.5 Score Parameters
+------------------------------------------------------------------------------------------
+dock3.5_score_primary                                        no
+dock3.5_score_secondary                                      no
+
+Continuous Energy Score Parameters
+------------------------------------------------------------------------------------------
+continuous_score_primary                                     no
+continuous_score_secondary                                   no
+
+Footprint Similarity Score Parameters
+------------------------------------------------------------------------------------------
+footprint_similarity_score_primary                           no
+footprint_similarity_score_secondary                         no
+
+Pharmacophore Similarity Score Parameters
+------------------------------------------------------------------------------------------
+pharmacophore_score_primary                                  no
+pharmacophore_score_secondary                                no
+
+Descriptor Score Parameters
+------------------------------------------------------------------------------------------
+descriptor_score_primary                                     yes
+descriptor_score_secondary                                   no
+descriptor_use_grid_score                                    yes
+descriptor_use_pharmacophore_score                           no
+descriptor_use_tanimoto                                      no
+descriptor_use_hungarian                                     no
+descriptor_use_volume_overlap                                yes
+
+--- Descriptor Score Parameters: Grid Score ---
+descriptor_grid_score_rep_rad_scale                          1
+descriptor_grid_score_vdw_scale                              1
+descriptor_grid_score_es_scale                               1
+descriptor_grid_score_grid_prefix                            ga_rec.grid
+
+--- Descriptor Score Parameters: Volume Overlap Score ---
+descriptor_volume_score_reference_mol2_filename              ga_lig.mol2
+descriptor_volume_score_overlap_compute_method               analytical
+
+--- Descriptor Score Weights ---
+descriptor_weight_grid_score                                 1
+descriptor_weight_volume_overlap_score                       -15
+
+Using these settings, the Descriptor Score function takes the form:
+Descriptor_Score = (1 * Grid_Score) + (-15 * Volume_Score)
+
+Zou GB/SA Score Parameters
+------------------------------------------------------------------------------------------
+gbsa_zou_score_secondary                                     no
+
+Hawkins GB/SA Score Parameters
+------------------------------------------------------------------------------------------
+gbsa_hawkins_score_secondary                                 no
+
+SASA Score Parameters
+------------------------------------------------------------------------------------------
+SASA_score_secondary                                         no
+
+Amber Score Parameters
+------------------------------------------------------------------------------------------
+amber_score_secondary                                        no
+
+Note: No secondary scoring function selected.
+
+
+Simplex Minimization Parameters
+------------------------------------------------------------------------------------------
+minimize_ligand                                              yes
+minimize_anchor                                              yes
+minimize_flexible_growth                                     yes
+use_advanced_simplex_parameters                              no
+simplex_max_cycles                                           1
+simplex_score_converge                                       0.1
+simplex_cycle_converge                                       1.0
+simplex_trans_step                                           1.0
+simplex_rot_step                                             0.1
+simplex_tors_step                                            10.0
+simplex_anchor_max_iterations                                500
+simplex_grow_max_iterations                                  500
+simplex_grow_tors_premin_iterations                          0
+simplex_random_seed                                          0
+simplex_restraint_min                                        yes
+simplex_coefficient_restraint                                10.0
+
+Atom Typing Parameters
+------------------------------------------------------------------------------------------
+atom_model                                                   all
+vdw_defn_file                                                ../../../parameters/vdw_de_novo.defn
+flex_defn_file                                               ../../../parameters/flex.defn
+flex_drive_file                                              ../../../parameters/flex_drive.tbl
+chem_defn_file                                               ../../../parameters/chem.defn
+------------------------------------------------------------------------------------------
+
+Initializing Genetic Algorithms Routines...
+ Reading the molecule library from ga_parents.mol2...Done (#=30)
+ Reading the scaffold library from ../../../parameters/fraglib_scaffold.mol2...Done (#=18)
+ Reading the linker library from ../../../parameters/fraglib_linker.mol2...Done (#=145)
+ Reading the sidechain library from ../../../parameters/fraglib_sidechain.mol2...Done (#=217)
+Initializing typer for Grid Score within Descriptor Score...
+Initializing Grid Score Routines...
+ Reading the energy grid from ga_rec.grid.nrg
+ Done reading the energy grid.
+ Reading the grid box quantifiers from ga_rec.grid.bmp
+ Done reading the grid box quantifiers.
+Initializing typer for Volume Overlap Score within Descriptor Score...
+Volume reference mol2 file was read in successfully
+
+## Initializing Initial Parent Generation ##
+#### Parent 0  Rescored to Fitness: -69.265
+#### Parent 1  Rescored to Fitness: -48.0863
+#### Parent 2  Rescored to Fitness: -69.5668
+#### Parent 3  Rescored to Fitness: -65.1712
+#### Parent 4  Rescored to Fitness: -64.169
+#### Parent 5  Rescored to Fitness: -65.459
+#### Parent 6  Rescored to Fitness: -53.1791
+#### Parent 7  Rescored to Fitness: -47.1376
+#### Parent 8  Rescored to Fitness: -76.3573
+#### Parent 9  Rescored to Fitness: -48.7475
+#### Parent 10  Rescored to Fitness: -53.4197
+#### Parent 11  Rescored to Fitness: -44.7104
+#### Parent 12  Rescored to Fitness: -49.4084
+#### Parent 13  Rescored to Fitness: -44.2945
+#### Parent 14  Rescored to Fitness: -45.9651
+#### Parent 15  Rescored to Fitness: -63.6619
+#### Parent 16  Rescored to Fitness: -72.1469
+#### Parent 17  Rescored to Fitness: -51.7464
+#### Parent 18  Rescored to Fitness: -44.9117
+#### Parent 19  Rescored to Fitness: -49.948
+#### Parent 20  Rescored to Fitness: -56.1479
+#### Parent 21  Rescored to Fitness: -47.2115
+#### Parent 22  Rescored to Fitness: -33.9641
+#### Parent 23  Rescored to Fitness: -47.9165
+#### Parent 24  Rescored to Fitness: -53.0716
+#### Parent 25  Rescored to Fitness: -51.2097
+#### Parent 26  Rescored to Fitness: -75.0742
+#### Parent 27  Rescored to Fitness: -52.3826
+#### Parent 28  Rescored to Fitness: -45.9879
+#### Parent 29  Rescored to Fitness: -44.2863
+UPDATING FITNESS
+For objective 0 (grid):
+mol 0 score_vol 0.90656 min 0.365937 max 0.90656score - min 0.540623 denom 0.540623 new score -1
+mol 1 score_vol 0.767741 min 0.365937 max 0.90656score - min 0.401804 denom 0.540623 new score -0.743224
+mol 2 score_vol 0.685184 min 0.365937 max 0.90656score - min 0.319246 denom 0.540623 new score -0.590516
+mol 3 score_vol 0.679396 min 0.365937 max 0.90656score - min 0.313458 denom 0.540623 new score -0.57981
+mol 4 score_vol 0.676697 min 0.365937 max 0.90656score - min 0.31076 denom 0.540623 new score -0.574818
+mol 5 score_vol 0.671022 min 0.365937 max 0.90656score - min 0.305085 denom 0.540623 new score -0.564322
+mol 6 score_vol 0.635483 min 0.365937 max 0.90656score - min 0.269546 denom 0.540623 new score -0.498584
+mol 7 score_vol 0.608527 min 0.365937 max 0.90656score - min 0.24259 denom 0.540623 new score -0.448723
+mol 8 score_vol 0.606188 min 0.365937 max 0.90656score - min 0.240251 denom 0.540623 new score -0.444396
+mol 9 score_vol 0.603443 min 0.365937 max 0.90656score - min 0.237506 denom 0.540623 new score -0.439319
+mol 10 score_vol 0.550502 min 0.365937 max 0.90656score - min 0.184565 denom 0.540623 new score -0.341393
+mol 11 score_vol 0.549841 min 0.365937 max 0.90656score - min 0.183904 denom 0.540623 new score -0.340171
+mol 12 score_vol 0.546156 min 0.365937 max 0.90656score - min 0.180218 denom 0.540623 new score -0.333353
+mol 13 score_vol 0.545727 min 0.365937 max 0.90656score - min 0.17979 denom 0.540623 new score -0.33256
+mol 14 score_vol 0.532977 min 0.365937 max 0.90656score - min 0.16704 denom 0.540623 new score -0.308976
+mol 15 score_vol 0.527893 min 0.365937 max 0.90656score - min 0.161956 denom 0.540623 new score -0.299573
+mol 16 score_vol 0.522078 min 0.365937 max 0.90656score - min 0.15614 denom 0.540623 new score -0.288816
+mol 17 score_vol 0.515765 min 0.365937 max 0.90656score - min 0.149827 denom 0.540623 new score -0.277139
+mol 18 score_vol 0.51572 min 0.365937 max 0.90656score - min 0.149783 denom 0.540623 new score -0.277056
+mol 19 score_vol 0.504971 min 0.365937 max 0.90656score - min 0.139034 denom 0.540623 new score -0.257173
+mol 20 score_vol 0.471335 min 0.365937 max 0.90656score - min 0.105398 denom 0.540623 new score -0.194957
+mol 21 score_vol 0.46789 min 0.365937 max 0.90656score - min 0.101952 denom 0.540623 new score -0.188583
+mol 22 score_vol 0.438262 min 0.365937 max 0.90656score - min 0.0723251 denom 0.540623 new score -0.133781
+mol 23 score_vol 0.365937 min 0.365937 max 0.90656score - min 0 denom 0.540623 new score -0
+For objective 7 (vol):
+For objective 7 (vol): nothing similar 
+mol 0 fitness initial -0.682088score -1
+mol 0 final fitness -1.68209
+For objective 7 (vol): nothing similar 
+mol 1 fitness initial -0.87038score -0.743224
+mol 1 final fitness -1.6136
+For objective 7 (vol):
+mol 2 fitness initial -0.0886198score -0.590516
+mol 2 new fitness -0.441561 final fitness -0.53018
+For objective 7 (vol):
+mol 3 fitness initial -0.154951score -0.57981
+mol 3 new fitness -0.287864 final fitness -0.442815
+For objective 7 (vol):
+mol 4 fitness initial -0.128416score -0.574818
+mol 4 new fitness -0.285385 final fitness -0.413802
+For objective 7 (vol):
+mol 5 fitness initial -0.343415score -0.564322
+mol 5 new fitness -0.417836 final fitness -0.761251
+For objective 7 (vol): nothing similar 
+mol 6 fitness initial -0.340855score -0.498584
+mol 6 final fitness -0.839439
+For objective 7 (vol):
+mol 7 fitness initial -0.0984584score -0.448723
+mol 7 new fitness -0.286545 final fitness -0.385003
+For objective 7 (vol):
+mol 8 fitness initial -0.30714score -0.444396
+mol 8 new fitness -0.260988 final fitness -0.568127
+For objective 7 (vol):
+mol 9 fitness initial -0.461976score -0.439319
+mol 9 new fitness -0.284853 final fitness -0.746829
+For objective 7 (vol):
+mol 10 fitness initial -0.247942score -0.341393
+mol 10 new fitness -0.140605 final fitness -0.388547
+For objective 7 (vol):
+mol 11 fitness initial -0.254122score -0.340171
+mol 11 new fitness -0.135031 final fitness -0.389153
+For objective 7 (vol):
+mol 12 fitness initial -0.231491score -0.333353
+mol 12 new fitness -0.121897 final fitness -0.353388
+For objective 7 (vol):
+mol 13 fitness initial -0.0893919score -0.33256
+mol 13 new fitness -0.122732 final fitness -0.212124
+For objective 7 (vol):
+mol 14 fitness initial -0.234187score -0.308976
+mol 14 new fitness -0.197642 final fitness -0.431828
+For objective 7 (vol):
+mol 15 fitness initial -0.140816score -0.299573
+mol 15 new fitness -0.154279 final fitness -0.295095
+For objective 7 (vol):
+mol 16 fitness initial -0.115078score -0.288816
+mol 16 new fitness -0.126573 final fitness -0.241651
+For objective 7 (vol):
+mol 17 fitness initial -0.165284score -0.277139
+mol 17 new fitness -0.121128 final fitness -0.286412
+For objective 7 (vol):
+mol 18 fitness initial -0.290408score -0.277056
+mol 18 new fitness -0.12123 final fitness -0.411638
+For objective 7 (vol):
+mol 19 fitness initial -1score -0.257173
+mol 19 new fitness -0.347362 final fitness -1.25717
+For objective 7 (vol):
+mol 20 fitness initial -0.742139score -0.194957
+mol 20 new fitness -0.244147 final fitness -0.937096
+For objective 7 (vol):
+mol 21 fitness initial -0.698837score -0.188583
+mol 21 new fitness -0.236165 final fitness -0.88742
+For objective 7 (vol): nothing similar 
+mol 22 fitness initial -0.920369score -0.133781
+mol 22 final fitness -1.05415
+For objective 7 (vol): nothing similar 
+mol 23 fitness initial 0score -0
+mol 23 final fitness 0
+Average Score parents gen 1: -53.7953
+For GA round 1 : new size of parents = 24
+
+## Entering Genetic Algorithm Generation 1 ##
+For GA round 1 : new size of parents = 24
+
+#### Unique molecules that overlap 23
+Number of overlapping bonds this round 163 of 4030 bonds sampled
+
+#### In breeding, size of children 21
+#### Total number of molecules made: 26
+#### Total number with valid torenv: 21
+#### Total number with valid descriptors: 21
+#### Number of unique pairs sampled 276 of 276
+#### Total number of xovers prevented by Hungarian: 298
+#### Total number of molecules after minimization: 21
+#### Initial Ensemble Size 21
+#### Size after energy/internal energy prune 21 0 0
+#### Ensemble size after similarity pruning 13
+
+-----------------------------------
+#### Total number of molecules after fitness pruning: 13
+#### Total number of parents involved in xover: 12
+#### Entering Random Parent mutations. Size 12
+#### For this round of GA, parent mutations: 3
+#### Expected number of parent mutations: 3 size 3 mut cycle 0
+Successful parent deletions: 2 / 2
+Successful parent additions: 1 / 2
+Successful parent substitutions: 0 / 0
+Successful parent replacements: 0 / 1
+
+-----------------------------------
+#### Initial Ensemble Size 3
+#### Size after energy/internal energy prune 3 0 0
+#### Ensemble size after similarity pruning 3
+
+-----------------------------------
+### Offspring_size_before_parents_pruning 3 offspring_size_after_pruning 3
+### Parents size before P-O pruning 24 Parents size after pruning 24
+
+-----------------------------------
+#### Entering Random Offspring mutations. Size 13
+#### For this round of GA, offspring mutations: 9
+#### Expected number of offspring mutations: 9 size 9 mut cycle 0
+Successful offspring deletions: 0 / 0
+Successful offspring additions: 4 / 4
+Successful offspring substitutions: 5 / 5
+Successful offspring replacements: 0 / 2
+#### Initial Ensemble Size 9
+#### Size after energy/internal energy prune 9 0 0
+#### Ensemble size after similarity pruning 9
+
+-----------------------------------
+#### Initial Ensemble Size 22
+#### Size after energy/internal energy prune 22 0 0
+#### Ensemble size after similarity pruning 22
+
+-----------------------------------
+### Offspring_size_before_parents_pruning 22 offspring_size_after_pruning 22
+### Parents size before P-O pruning 3 Parents size after pruning 3
+
+-----------------------------------
+### Offspring_size_before_parents_pruning 22 offspring_size_after_pruning 22
+### Parents size before P-O pruning 24 Parents size after pruning 24
+
+-----------------------------------
+Average Score gen 1 -37.2596
+#### Parent 0  Rescored to Fitness: -69.5668
+#### Parent 1  Rescored to Fitness: -75.0742
+#### Parent 2  Rescored to Fitness: -48.0863
+#### Parent 3  Rescored to Fitness: -44.9117
+#### Parent 4  Rescored to Fitness: -47.2115
+#### Parent 5  Rescored to Fitness: -52.3826
+#### Parent 6  Rescored to Fitness: -51.7464
+#### Parent 7  Rescored to Fitness: -47.1376
+#### Parent 8  Rescored to Fitness: -49.948
+#### Parent 9  Rescored to Fitness: -56.1479
+#### Parent 10  Rescored to Fitness: -53.4197
+#### Parent 11  Rescored to Fitness: -53.1791
+#### Parent 12  Rescored to Fitness: -48.7475
+#### Parent 13  Rescored to Fitness: -45.9651
+#### Parent 14  Rescored to Fitness: -53.0716
+#### Parent 15  Rescored to Fitness: -44.7104
+#### Parent 16  Rescored to Fitness: -45.9879
+#### Parent 17  Rescored to Fitness: -44.2863
+#### Parent 18  Rescored to Fitness: -47.9165
+#### Parent 19  Rescored to Fitness: -76.3573
+#### Parent 20  Rescored to Fitness: -65.459
+#### Parent 21  Rescored to Fitness: -63.6619
+#### Parent 22  Rescored to Fitness: -72.1469
+#### Parent 23  Rescored to Fitness: -33.9641
+#### Final parent size before selection: 24
+#### Final offspring size before selection: 25
+Selection Method: Elitism
+#### Parent 0  Rescored to Fitness: -69.5668
+#### Parent 1  Rescored to Fitness: -75.0742
+#### Parent 2  Rescored to Fitness: -48.0863
+#### Parent 3  Rescored to Fitness: -44.9117
+#### Parent 4  Rescored to Fitness: -47.2115
+#### Parent 5  Rescored to Fitness: -52.3826
+#### Parent 6  Rescored to Fitness: -51.7464
+#### Parent 7  Rescored to Fitness: -47.1376
+#### Parent 8  Rescored to Fitness: -49.948
+#### Parent 9  Rescored to Fitness: -56.1479
+#### Parent 10  Rescored to Fitness: -53.4197
+#### Parent 11  Rescored to Fitness: -53.1791
+#### Parent 12  Rescored to Fitness: -48.7475
+#### Parent 13  Rescored to Fitness: -45.9651
+#### Parent 14  Rescored to Fitness: -53.0716
+#### Parent 15  Rescored to Fitness: -44.7104
+#### Parent 16  Rescored to Fitness: -45.9879
+#### Parent 17  Rescored to Fitness: -44.2863
+#### Parent 18  Rescored to Fitness: -47.9165
+#### Parent 19  Rescored to Fitness: -76.3573
+#### Parent 20  Rescored to Fitness: -65.459
+#### Parent 21  Rescored to Fitness: -63.6619
+#### Parent 22  Rescored to Fitness: -72.1469
+#### Parent 23  Rescored to Fitness: -33.9641
+UPDATING FITNESS
+For objective 0 (grid):
+mol 0 score_vol 0.90656 min 0.32333 max 0.90656score - min 0.58323 denom 0.58323 new score -1
+mol 1 score_vol 0.767741 min 0.32333 max 0.90656score - min 0.444411 denom 0.58323 new score -0.761982
+mol 2 score_vol 0.685184 min 0.32333 max 0.90656score - min 0.361854 denom 0.58323 new score -0.62043
+mol 3 score_vol 0.679396 min 0.32333 max 0.90656score - min 0.356066 denom 0.58323 new score -0.610507
+mol 4 score_vol 0.676697 min 0.32333 max 0.90656score - min 0.353367 denom 0.58323 new score -0.605879
+mol 5 score_vol 0.671022 min 0.32333 max 0.90656score - min 0.347693 denom 0.58323 new score -0.59615
+mol 6 score_vol 0.668689 min 0.32333 max 0.90656score - min 0.345359 denom 0.58323 new score -0.592149
+mol 7 score_vol 0.635483 min 0.32333 max 0.90656score - min 0.312154 denom 0.58323 new score -0.535215
+mol 8 score_vol 0.621027 min 0.32333 max 0.90656score - min 0.297697 denom 0.58323 new score -0.510428
+mol 9 score_vol 0.61316 min 0.32333 max 0.90656score - min 0.28983 denom 0.58323 new score -0.496939
+mol 10 score_vol 0.612966 min 0.32333 max 0.90656score - min 0.289636 denom 0.58323 new score -0.496606
+mol 11 score_vol 0.608527 min 0.32333 max 0.90656score - min 0.285197 denom 0.58323 new score -0.488996
+mol 12 score_vol 0.606188 min 0.32333 max 0.90656score - min 0.282858 denom 0.58323 new score -0.484985
+mol 13 score_vol 0.603443 min 0.32333 max 0.90656score - min 0.280113 denom 0.58323 new score -0.480279
+mol 14 score_vol 0.588134 min 0.32333 max 0.90656score - min 0.264804 denom 0.58323 new score -0.454031
+mol 15 score_vol 0.583759 min 0.32333 max 0.90656score - min 0.260429 denom 0.58323 new score -0.446529
+mol 16 score_vol 0.575019 min 0.32333 max 0.90656score - min 0.251689 denom 0.58323 new score -0.431543
+mol 17 score_vol 0.567116 min 0.32333 max 0.90656score - min 0.243786 denom 0.58323 new score -0.417994
+mol 18 score_vol 0.550502 min 0.32333 max 0.90656score - min 0.227172 denom 0.58323 new score -0.389507
+mol 19 score_vol 0.549841 min 0.32333 max 0.90656score - min 0.226512 denom 0.58323 new score -0.388374
+mol 20 score_vol 0.546156 min 0.32333 max 0.90656score - min 0.222826 denom 0.58323 new score -0.382055
+mol 21 score_vol 0.545727 min 0.32333 max 0.90656score - min 0.222397 denom 0.58323 new score -0.38132
+mol 22 score_vol 0.542262 min 0.32333 max 0.90656score - min 0.218932 denom 0.58323 new score -0.375379
+mol 23 score_vol 0.542023 min 0.32333 max 0.90656score - min 0.218694 denom 0.58323 new score -0.37497
+mol 24 score_vol 0.532977 min 0.32333 max 0.90656score - min 0.209647 denom 0.58323 new score -0.359459
+mol 25 score_vol 0.527893 min 0.32333 max 0.90656score - min 0.204564 denom 0.58323 new score -0.350742
+mol 26 score_vol 0.5243 min 0.32333 max 0.90656score - min 0.20097 denom 0.58323 new score -0.344581
+mol 27 score_vol 0.524167 min 0.32333 max 0.90656score - min 0.200837 denom 0.58323 new score -0.344353
+mol 28 score_vol 0.522078 min 0.32333 max 0.90656score - min 0.198748 denom 0.58323 new score -0.340771
+mol 29 score_vol 0.521627 min 0.32333 max 0.90656score - min 0.198297 denom 0.58323 new score -0.339999
+mol 30 score_vol 0.515765 min 0.32333 max 0.90656score - min 0.192435 denom 0.58323 new score -0.329947
+mol 31 score_vol 0.51572 min 0.32333 max 0.90656score - min 0.19239 denom 0.58323 new score -0.329871
+mol 32 score_vol 0.51226 min 0.32333 max 0.90656score - min 0.18893 denom 0.58323 new score -0.323938
+mol 33 score_vol 0.50583 min 0.32333 max 0.90656score - min 0.1825 denom 0.58323 new score -0.312912
+mol 34 score_vol 0.504971 min 0.32333 max 0.90656score - min 0.181641 denom 0.58323 new score -0.31144
+mol 35 score_vol 0.503637 min 0.32333 max 0.90656score - min 0.180307 denom 0.58323 new score -0.309152
+mol 36 score_vol 0.495269 min 0.32333 max 0.90656score - min 0.171939 denom 0.58323 new score -0.294805
+mol 37 score_vol 0.485306 min 0.32333 max 0.90656score - min 0.161976 denom 0.58323 new score -0.277722
+mol 38 score_vol 0.485107 min 0.32333 max 0.90656score - min 0.161777 denom 0.58323 new score -0.277382
+mol 39 score_vol 0.476746 min 0.32333 max 0.90656score - min 0.153416 denom 0.58323 new score -0.263045
+mol 40 score_vol 0.471335 min 0.32333 max 0.90656score - min 0.148006 denom 0.58323 new score -0.253769
+mol 41 score_vol 0.46789 min 0.32333 max 0.90656score - min 0.14456 denom 0.58323 new score -0.247861
+mol 42 score_vol 0.465072 min 0.32333 max 0.90656score - min 0.141742 denom 0.58323 new score -0.243029
+mol 43 score_vol 0.463176 min 0.32333 max 0.90656score - min 0.139846 denom 0.58323 new score -0.239779
+mol 44 score_vol 0.463014 min 0.32333 max 0.90656score - min 0.139684 denom 0.58323 new score -0.239501
+mol 45 score_vol 0.438262 min 0.32333 max 0.90656score - min 0.114933 denom 0.58323 new score -0.197062
+mol 46 score_vol 0.428195 min 0.32333 max 0.90656score - min 0.104865 denom 0.58323 new score -0.1798
+mol 47 score_vol 0.365937 min 0.32333 max 0.90656score - min 0.0426075 denom 0.58323 new score -0.0730544
+mol 48 score_vol 0.32333 min 0.32333 max 0.90656score - min 0 denom 0.58323 new score -0
+For objective 7 (vol):
+For objective 7 (vol): nothing similar 
+mol 0 fitness initial -0.873716score -1
+mol 0 final fitness -1.87372
+For objective 7 (vol): nothing similar 
+mol 1 fitness initial -0.935107score -0.761982
+mol 1 final fitness -1.69709
+For objective 7 (vol):
+mol 2 fitness initial -0.168098score -0.62043
+mol 2 new fitness -1.52501 final fitness -0.788528
+For objective 7 (vol):
+mol 3 fitness initial -0.701846score -0.610507
+mol 3 new fitness -0.545938 final fitness -1.24778
+For objective 7 (vol):
+mol 4 fitness initial -0.242787score -0.605879
+mol 4 new fitness -0.494804 final fitness -0.737591
+For objective 7 (vol):
+mol 5 fitness initial -0.21754score -0.59615
+mol 5 new fitness -0.508805 final fitness -0.726345
+For objective 7 (vol):
+mol 6 fitness initial -0.673758score -0.592149
+mol 6 new fitness -0.700138 final fitness -1.26591
+For objective 7 (vol): nothing similar 
+mol 7 fitness initial -0.20239score -0.535215
+mol 7 final fitness -0.737605
+For objective 7 (vol):
+mol 8 fitness initial -0.541129score -0.510428
+mol 8 new fitness -2.29614 final fitness -1.05156
+For objective 7 (vol):
+mol 9 fitness initial -0.229417score -0.496939
+mol 9 new fitness -0.275298 final fitness -0.504714
+For objective 7 (vol):
+mol 10 fitness initial -0.177182score -0.496606
+mol 10 new fitness -0.271847 final fitness -0.449029
+For objective 7 (vol):
+mol 11 fitness initial -0.163303score -0.488996
+mol 11 new fitness -0.226483 final fitness -0.389786
+For objective 7 (vol):
+mol 12 fitness initial -0.16894score -0.484985
+mol 12 new fitness -0.255522 final fitness -0.424463
+For objective 7 (vol):
+mol 13 fitness initial -0.801949score -0.480279
+mol 13 new fitness -0.42643 final fitness -1.22838
+For objective 7 (vol):
+mol 14 fitness initial -0.164186score -0.454031
+mol 14 new fitness -0.887354 final fitness -0.618217
+For objective 7 (vol):
+mol 15 fitness initial -0.706147score -0.446529
+mol 15 new fitness -0.832779 final fitness -1.15268
+For objective 7 (vol):
+mol 16 fitness initial -0.195919score -0.431543
+mol 16 new fitness -3.02767 final fitness -0.627462
+For objective 7 (vol):
+mol 17 fitness initial -0.183778score -0.417994
+mol 17 new fitness -3.54203 final fitness -0.601772
+For objective 7 (vol):
+mol 18 fitness initial -0.318633score -0.389507
+mol 18 new fitness -0.190721 final fitness -0.509355
+For objective 7 (vol):
+mol 19 fitness initial -0.285145score -0.388374
+mol 19 new fitness -0.166169 final fitness -0.451314
+For objective 7 (vol):
+mol 20 fitness initial -0.198804score -0.382055
+mol 20 new fitness -0.120905 final fitness -0.319709
+For objective 7 (vol):
+mol 21 fitness initial -0.169672score -0.38132
+mol 21 new fitness -0.120672 final fitness -0.290344
+For objective 7 (vol):
+mol 22 fitness initial -0.174709score -0.375379
+mol 22 new fitness -0.157286 final fitness -0.331996
+For objective 7 (vol):
+mol 23 fitness initial -0.181556score -0.37497
+mol 23 new fitness -0.164466 final fitness -0.346022
+For objective 7 (vol):
+mol 24 fitness initial -0.296658score -0.359459
+mol 24 new fitness -0.747554 final fitness -0.656117
+For objective 7 (vol):
+mol 25 fitness initial -0.299618score -0.350742
+mol 25 new fitness -0.154705 final fitness -0.454323
+For objective 7 (vol):
+mol 26 fitness initial -0.324697score -0.344581
+mol 26 new fitness -0.10907 final fitness -0.433767
+For objective 7 (vol):
+mol 27 fitness initial -0.276905score -0.344353
+mol 27 new fitness -0.107984 final fitness -0.384889
+For objective 7 (vol):
+mol 28 fitness initial -0.163569score -0.340771
+mol 28 new fitness -0.100069 final fitness -0.263638
+For objective 7 (vol):
+mol 29 fitness initial -0.603409score -0.339999
+mol 29 new fitness -0.101338 final fitness -0.704747
+For objective 7 (vol):
+mol 30 fitness initial -0.399659score -0.329947
+mol 30 new fitness -0.140126 final fitness -0.539785
+For objective 7 (vol):
+mol 31 fitness initial -0.24749score -0.329871
+mol 31 new fitness -0.140985 final fitness -0.388475
+For objective 7 (vol):
+mol 32 fitness initial -0.493407score -0.323938
+mol 32 new fitness -0.187356 final fitness -0.680763
+For objective 7 (vol):
+mol 33 fitness initial -0.173521score -0.312912
+mol 33 new fitness -0.161152 final fitness -0.334673
+For objective 7 (vol):
+mol 34 fitness initial -0.977369score -0.31144
+mol 34 new fitness -0.160394 final fitness -1.13776
+For objective 7 (vol):
+mol 35 fitness initial -0.91638score -0.309152
+mol 35 new fitness -0.180795 final fitness -1.09717
+For objective 7 (vol):
+mol 36 fitness initial -0.154177score -0.294805
+mol 36 new fitness -4.45918 final fitness -0.448983
+For objective 7 (vol):
+mol 37 fitness initial -0.155462score -0.277722
+mol 37 new fitness -0.271608 final fitness -0.427069
+For objective 7 (vol):
+mol 38 fitness initial -0.505273score -0.277382
+mol 38 new fitness -0.265529 final fitness -0.770802
+For objective 7 (vol):
+mol 39 fitness initial -0.626325score -0.263045
+mol 39 new fitness -0.506691 final fitness -0.88937
+For objective 7 (vol):
+mol 40 fitness initial -0.893295score -0.253769
+mol 40 new fitness -0.172273 final fitness -1.06557
+For objective 7 (vol):
+mol 41 fitness initial -0.879176score -0.247861
+mol 41 new fitness -0.110542 final fitness -0.989718
+For objective 7 (vol):
+mol 42 fitness initial 0score -0.243029
+mol 42 new fitness -0.0954864 final fitness -0.0954864
+For objective 7 (vol):
+mol 43 fitness initial -0.480575score -0.239779
+mol 43 new fitness -0.10275 final fitness -0.583325
+For objective 7 (vol):
+mol 44 fitness initial -0.264478score -0.239501
+mol 44 new fitness -0.105078 final fitness -0.369556
+For objective 7 (vol): nothing similar 
+mol 45 fitness initial -0.951405score -0.197062
+mol 45 final fitness -1.14847
+For objective 7 (vol): nothing similar 
+mol 46 fitness initial -1score -0.1798
+mol 46 final fitness -1.1798
+For objective 7 (vol): nothing similar 
+mol 47 fitness initial -0.651325score -0.0730544
+mol 47 final fitness -0.72438
+For objective 7 (vol): nothing similar 
+mol 48 fitness initial -0.64663score -0
+mol 48 final fitness -0.64663
+
+ #### 28 molecules in new ensemble 1 of GA
+Average survivors score from gen 1 -46.3882
+Random Seed:0
+Total elapsed time:	15 seconds

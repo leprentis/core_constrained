@@ -1,0 +1,39 @@
+# DOCK configuration file for GNU compilers.
+# This configuration file can be used on many platforms:
+#  Linux, Macintosh OS X, Windows with Cygwin, etc.
+# If gfortran is not preferred then change FC below to g95 or g77.
+
+# REQUIREMENTS - define these environment variables
+# RDBASE is the root directory of RDKit
+# BOOST is the root directory of Boost
+# END REQUIREMENTS
+
+# CC is the C compiler
+# CXX is the C++ compiler
+# CFLAGS is the flags for the C and C++ compilers
+# FC is the Fortran compiler
+# FFLAGS are the flags for the Fortran compiler
+# LIBS are the flags for the linker
+# LINK_WITHOUT_FORTRAN_MAIN is the flag for linking without Fortran's main
+# LOAD is the command to invoke the linker
+# DOCK_SUFFIX is the suffix for the dock executable
+
+CC=          gcc
+CXX=         g++
+CFLAGS=      -DBUILD_DOCK_WITH_RDKIT -I$(RDBASE)/Code -I$(BOOST)/include -O2 -g 
+FC=          gfortran
+FFLAGS=      -O2 -fno-automatic -fno-second-underscore
+LIBS=        -L$(RDBASE)/lib -L$(BOOST)/lib -Wl,-rpath=$(RDBASE)/lib -lm -lpthread -lstdc++ -lRDKitGraphMol -lRDKitRDGeneral -lRDKitDescriptors
+LINK_WITHOUT_FORTRAN_MAIN=
+LOAD=        g++
+DOCK_SUFFIX=
+
+# Macro definitions for NAB
+# AR is the library archiver
+# LEX is the lexical analyzer generator
+# OCFLAGS is the flags for the C compilers with high optimization
+# RANLIB is the library index generator
+AR=          ar rv
+LEX=         flex
+OCFLAGS=     -O3 -D_ANSI_SOURCE
+RANLIB=      ranlib
